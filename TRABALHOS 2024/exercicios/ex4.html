@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+    <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+</head>
+<body>
+    <h2>Exercício 4</h2>
+    <p>Faça um algoritmo que receba um número e imprima na tela o seu antecessor e o seu sucessor.</p><br>
+    <input type="number" placeholder="Insira um número" id="n"><br>
+    <button onclick="main()">Clique para executar</button>
+    <p id="output"></p>
+
+    <script>
+        function main(){
+            // recebendo valores
+            const n = parseFloat(document.getElementById('n').value);
+            const output = document.getElementById('output');
+
+            // se for numero
+            if (!isNaN(n)) {
+                output.textContent = `Antecessor: ${n - 1} | Sucessor: ${n + 1}`;
+            } else {
+                output.textContent = 'Insira os números, por favor.';
+            }
+        }
+    </script>
+</body>
+</html>

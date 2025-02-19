@@ -1,0 +1,110 @@
+/* Resetando margens e preenchimentos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;   
+  }
+  
+  /* Estilo para o body com fundo degradê */
+  body {
+    background: linear-gradient(to bottom, #78a8c4, #5e859c,#47677a); /* Degradê dourado para laranja escuro */
+    font-family: Arial, sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Garante que o footer fique no final */
+    background-size: 200% 200%; /* Faz o gradiente se expandir e criar um padrão contínuo */
+  }
+  
+  /* Estilo do header */
+  header {
+    background-color: rgba(0, 0, 0);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+    margin: 0;
+  }
+  
+  /* Estilo do main */
+  main {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1; /* Permite que o main ocupe o espaço restante */
+  }
+  
+  main h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  main p {
+    font-size: 1.2em;
+  }
+  
+  /* Estilo do footer */
+  footer {
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+  }
+  
+  footer p {
+    font-size: 1em;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap; /* Garante que as caixas se ajustem em telas menores */
+  }
+
+  img{
+    border: #fff 15px solid;
+  }
+
+  .box {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Para esconder qualquer conteúdo que ultrapasse o limite da caixa */
+    width: 16%; /* Cada caixa ocupa 23% do espaço, permitindo 4 caixas lado a lado */
+    box-shadow: 0 4px 8px rgb(41, 40, 40);
+    text-align: center;
+    transform-origin: center; /* Garante que o zoom será feito a partir do centro */
+    transition: transform 0.5s ease-in-out; /* Transição suave  */
+  }
+ 
+  .box.zoom {
+    transform: scale(1.50) translateY(100px); /* Aumenta o tamanho e move a caixa para baixo */
+}
+  
+  .box img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Garante que a imagem cubra toda a área da caixa */
+  }
+  
+  @media (max-width: 1024px) {
+    .box {
+      width: 12%; /* Em telas médias, as caixas ocupam 48% da largura */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .box {
+      width: 24%; /* Em telas menores, as caixas ocupam metade da largura */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .box {
+      width: 80%; /* Em telas muito pequenas, as caixas ocupam 100% da largura */
+    }
+  }

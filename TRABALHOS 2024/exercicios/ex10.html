@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+    <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+</head>
+<body>
+    <h2>Exercício 10</h2>
+    <p>Faça um algoritmo que leia três notas obtidas por um aluno, e imprima na tela a média das notas.</p><br>
+    <input type="number" id="a" placeholder="Primeira nota"><br>
+    <input type="number" id="b" placeholder="Segunda nota"><br>
+    <input type="number" id="c" placeholder="Terceira nota"><br>
+    <button onclick="main()">Clique para executar</button><br>
+    <p id="media"></p>
+
+    <script>
+        function main(){
+            const a = parseFloat(document.getElementById('a').value);
+            const b = parseFloat(document.getElementById('b').value);
+            const c = parseFloat(document.getElementById('c').value);
+            const output = document.getElementById('media');
+            var media;
+
+            if (!isNaN(a) && !isNaN(b) && !isNaN(c)) {
+                media = (a + b + c)/3;
+                output.textContent = `Média: ${media}`;
+            } else {
+                output.textContent = 'Insira os números, por favor.'
+            }
+        }
+    </script>
+</body>
+</html>

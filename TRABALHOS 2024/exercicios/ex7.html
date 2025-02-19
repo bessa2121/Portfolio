@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+    <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+</head>
+<body>
+    <h2>Exercício 7</h2>
+    <p>Faça um algoritmo que leia dois valores booleanos (lógicos) e determine se ambos são VERDADEIRO ou FALSO.</p><br>
+    <label for="opcao1">Primeiro valor:</label><br>
+    <select id="opcao1" name="opcao1">
+        <option value="true">Verdadeiro</option>
+        <option value="false">Falso</option>
+    </select><br>
+    <label for="opcao2">Segundo valor:</label><br>
+    <select id="opcao2" name="opcao2">
+        <option value="true">Verdadeiro</option>
+        <option value="false">Falso</option>
+    </select><br>
+    <button onclick="main()">Clique para executar</button><br>
+    <p id="output"></p>
+
+    <script>
+        function main(){
+            const opcao1 = document.getElementById('opcao1').value;
+            const opcao2 = document.getElementById('opcao2').value;
+            const output = document.getElementById('output');
+
+            if (opcao1 == opcao2 && opcao1 == 'true') {
+                output.textContent = 'Ambos são verdadeiros.';
+            } else if (opcao1 == opcao2 && opcao2 == 'false') {
+                output.textContent = 'Ambos são falsos.';
+            } else {
+                output.textContent = 'Um é verdadeiro e o outro falso.';
+            }
+        }
+    </script>
+</body>
+</html>

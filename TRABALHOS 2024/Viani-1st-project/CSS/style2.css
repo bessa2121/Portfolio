@@ -1,0 +1,320 @@
+body{
+    display: block;
+    background-color:#ebeef2 ;
+    min-height: 800px;
+    max-height: 10000px;
+}
+ul{
+    font-size:large;
+    list-style-type:none;
+    margin: -8px;
+    padding: 0;
+    overflow: hidden;
+    background-color:rgb(215, 218, 221) ;
+}
+li{
+    margin-bottom: -5px;
+    float: left;
+}
+li a{
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 30px;
+    text-decoration: none;
+}
+li a:hover{ 
+    text-shadow: #000000 3px 3px 3px;
+    background-color: #1d354e;
+    color: #ffffff;
+}
+/*todas as products estao nele*/
+.gallery {
+    font-family:'Courier New', Courier, monospace;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+
+/*define botao*/
+.container0{
+    border-radius: 50px;
+}
+
+/*comprar e botao de checar estao dentro dele*/
+.caixinha{
+    padding: 20px 0 10px 20px;
+    margin: 0 60px 0 60px;
+    border-radius: 50px;
+}
+.caixinha:hover{
+    color: #000000;
+    background-color: rgb(209, 202, 202)
+}
+.caixinha{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 6px 2px;
+    cursor: pointer;
+    border-radius: 50px;
+}
+/*botao de compra */
+.option-0{
+    margin : 0 0 -8px 0px;
+}
+
+/*destaques da semana e tals*/
+h1{
+    border-top: black solid 7px ;
+    border-bottom: black solid 7px ;
+    margin-right: -8px;
+    margin-left: -8px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    padding: 30px;
+    background-color:#011640 ;
+}
+/*enquadra todos os elementos do produto1*/
+.product {
+    background-color:#011640;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+/*animaçao de comprar para checado*/
+label {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 15px 10px 10px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    color: white;
+   }
+    input {
+    display: none;
+   }
+   
+   input:checked + label svg {
+    fill: hsl(0deg 100% 50%);
+    stroke: hsl(0deg 100% 50%);
+    animation: heartButton 1s;
+   }
+   
+   @keyframes heartButton {
+    0% {
+     transform: scale(1);
+    }
+   
+    25% {
+     transform: scale(1.3);
+    }
+   
+    50% {
+     transform: scale(1);
+    }
+   
+    75% {
+     transform: scale(1.3);
+    }
+   
+    100% {
+     transform: scale(1);
+    }
+   }
+   
+   input + label .action {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+   }
+   
+   input + label .action span {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    transition: all .5s;
+   }
+   
+   input + label .action span.option-1 {
+    transform: translate(0px,0%);
+    opacity: 1;
+   }
+   
+   input:checked + label .action span.option-1 {
+    transform: translate(0px,-100%);
+    opacity: 0;
+   }
+   
+   input + label .action span.option-2 {
+    transform: translate(0px,100%);
+    opacity: 0;
+   }
+   
+   input:checked + label .action span.option-2 {
+    transform: translate(0px,0%);
+    opacity: 1;
+   }
+   
+   /*add to favoritos*/
+
+label {
+    background-color: aliceblue;
+    display:flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 15px 10px 10px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 50px;
+    box-shadow: rgba(56, 88, 121, 0.2) 0px 8px 24px;
+    color: #274360;
+}
+ 
+input{
+    display:none;
+}
+
+
+   input:checked + label svg {
+    fill: hsl(0deg 100% 50%);
+    stroke: hsl(0deg 100% 50%);
+    animation: heartButton 1s;
+   }
+   
+   @keyframes heartButton {
+    0% {
+     transform: scale(1);
+    }
+   
+    25% {
+     transform: scale(1.3);
+    }
+   
+    50% {
+     transform: scale(1);
+    }
+   
+    75% {
+     transform: scale(1.3);
+    }
+   
+    100% {
+     transform: scale(1);
+    }
+   }
+   
+   input + label .action0 {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+   }
+   
+   input + label .action0 span {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    transition: all .5s;
+   }
+   
+   input + label .action0 span.option0 {
+    transform: translate(0px,0%);
+    opacity: 1;
+   }
+   
+   input:checked + label .action0 span.option0 {
+    transform: translate(0px,-100%);
+    opacity: 0;
+   }
+   
+   input + label .action0 span.option-0 {
+    transform: translate(0px,100%);
+    opacity: 0;
+   }
+   
+   input:checked + label .action0 span.option-0 {
+    transform: translate(0px,0%);
+    opacity: 1;
+   }
+   
+
+/* Hide the default checkbox */
+.container0 input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .container0 {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 1.5rem;
+    user-select: none;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark0 {
+    --clr: #0B6E4F;
+    position: relative;
+    left: 22px;
+    bottom: 1px;
+    height: 20px;
+    width: 20px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: 300ms;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container0 input:checked ~ .checkmark0 {
+    background-color: var(--clr);
+    border-radius: 50%;
+    animation: pulse 500ms ease-in-out;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark0:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container0 input:checked ~ .checkmark0:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container0 .checkmark0:after {
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 9px;
+    border: solid #E0E0E2;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+
+  

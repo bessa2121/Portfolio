@@ -1,0 +1,1169 @@
+@font-face {
+    font-family: font1;
+    src: url('fonts/font1.ttf');
+}
+body
+{
+    background: rgb(206, 204, 204);
+    margin: 0;
+}
+
+a
+{
+    text-decoration: none;
+}
+.icn1
+{
+    width: 12px;
+}
+.icn2
+{
+    width: 12px;
+}
+.icn3
+{
+    width: 12px;
+}
+.nav1
+{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 35px;
+    background-color: #EC6608;
+    z-index: 2;
+}
+
+.botoes
+{
+    width: 550px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.a
+{
+    font-size: 13px;
+    margin-left: 50px;
+    font-family: font1;
+    color: white;
+}
+.b
+{   font-size: 13px;
+    margin-left: 25px;
+    font-family: font1;
+    color: white;
+}
+.c
+{
+    font-size: 13px;
+    margin-left: 25px;
+    color: white;
+    font-family: font1;
+
+}
+.a1 
+{
+    font-size: 13px;
+    margin-right: 50px;
+    font-family: font1;
+    color: white;
+}
+.b1
+{
+    font-size: 13px;
+    margin-right: 50px;
+    font-family: font1;
+    color: white;
+}
+
+.calendario
+{
+    width: 25px;
+    margin-left: -10px;
+    margin-right: 23px;
+}
+.c1
+{
+    font-size: 15px;
+    margin-right: 50px;
+    font-family: font1;
+    color: white;
+    margin-left: 10px;
+}
+.barra
+{
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 30px;
+    color: white;
+    margin-left: -30px;
+    font-family: 'font1'
+}
+.nav2
+{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100px;
+    background-color: white;
+    margin-top: 35px;
+    font-family: font1;
+}
+.textnav2
+{
+    margin-right: 20vw;
+
+}
+.logo1
+{
+width: 200px;
+margin-left: 80px;
+}
+nav
+{
+    margin-top: 0px;
+    background-color: white !important;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100px;
+    background-color: white;
+    margin-top: 35px;
+    font-family: font1;
+    font-size: 20px;
+    z-index: 2;
+}
+nav li
+{
+    display: inline-block;
+    justify-content: space-between;
+    justify-items: center;
+    font-size: 15px;
+
+    padding: 10px;
+    border: solid px black;
+    z-index: 2;
+}
+nav li a
+{
+    display: inline-block;
+    color: black;
+    font-size: 15px;
+    margin-right: 30px;
+    font-size: 20px;
+    border: 1px black;
+}
+nav li a:hover
+{
+    color: #EC6608;
+    
+}
+.dropdown1-menu
+{
+    position: absolute;
+    display: none;
+    background-color: #EEECF3;
+    margin-left: -15px;
+    margin-top: 10px;
+    width: 400px;
+    height: 120px;
+    box-shadow: 0 0 5px white;
+   
+}
+.dropdown1-menu a
+{
+    display: block;
+    color: black;
+    
+    margin-top: 20px;
+    background-color: #EEECF3;
+    padding: 0;
+    width: 30;
+    font-size: 20px;
+    margin-left: 20px;
+  
+}
+.dropdown1-menu a:hover
+{
+    color: #EC6608;
+    
+}
+.dropdown1:hover .dropdown1-menu
+{
+display: block;
+}
+.dropdown2-menu
+{
+    position: absolute;
+    display: none;
+    background-color: #EEECF3;
+    margin-left: -15px;
+    margin-top: 10px;
+    width: 400px;
+    height: 120px;
+    box-shadow: 0 0 5px white;
+}
+.dropdown2-menu a
+{
+    display: block;
+    color: black;
+    
+    margin-top: 20px;
+    background-color: #EEECF3;
+    padding: 0;
+    width: 30;
+    font-size: 20px;
+    margin-left: 20px;
+}
+.dropdown2-menu a:hover
+{
+    color: #EC6608;
+    
+}
+.dropdown2:hover .dropdown2-menu
+{
+display: block;
+}
+.dropdown3-menu
+{
+    position: absolute;
+    display: none;
+    background-color: #EEECF3;
+    margin-left: -150px;
+    margin-top: 10px;
+    width: 600px;
+    height: 160px;
+    box-shadow: 0 0 5px white;
+}
+.dropdown3-menu a
+{
+    display: block;
+    color: black;
+    
+    margin-top: 20px;
+    background-color: #EEECF3;
+    padding: 0;
+    width: 30;
+    font-size: 20px;
+    margin-left: 20px;
+}
+.dropdown3-menu a:hover
+{
+    color: #EC6608;
+    
+}
+.dropdown3:hover .dropdown3-menu
+{
+display: block;
+}
+.d
+{
+
+    font-size: 15px;
+    margin-left: 330px;
+    color: black;
+    font-family: 'font1';
+    font-size: 20px;
+
+}
+.e
+{
+
+    font-size: 15px;
+    margin-left: 50px;
+    color: black;
+    font-family: 'font1';
+    font-size: 20px
+}
+.f
+{
+
+    font-size: 15px;
+    margin-left: 50px;
+    color: black;
+    font-family: 'font1';
+    font-size: 20px;
+}
+.g{
+
+    font-size: 15px;
+    margin-left: 50px;
+    color: black;
+    font-family: 'font1'; 
+    font-size: 20px;
+}
+.d:hover,
+.e:hover,
+.f:hover,
+.g:hover
+{
+    background-color: #EC6608;
+}
+
+
+ /*
+@media screen and (max-width:1500px)
+ {
+   .d,
+  .e,
+  .f,
+  .g
+  {
+   margin-right: 10px;
+   color: black;
+   font-family: 'font1'; 
+   font-size: 20px;
+   justify-content: center;
+   text-align: center;
+   margin-left: 20px;
+  }
+
+}
+@media  screen and (max-width:500px) 
+{
+    .d,
+    .e,
+    .f,
+    .g
+    {
+     margin-right: 20px;
+     color: black;
+     font-family: 'font1'; 
+     font-size: 7px;
+     justify-content: center;
+     text-align: center;
+     margin-left: 20px;
+    }
+     */  
+  
+    .logo1
+    {
+        width: 200px;
+        margin-left: 100px;
+    }
+    .logos
+    {
+        margin-right: 40px;
+        margin-left: 40px;
+        
+    }
+    .linkedin,
+    .tiktok,
+    .youtube
+    {
+        width: 10px;
+      
+    }
+
+
+.linkedin
+{
+    width: 30px;
+    margin-right: 10px;
+    margin-top: 4px;
+}
+.tiktok
+{
+    width: 25px;
+    margin-right: 10px;
+}
+.youtube
+{
+    width: 30px;
+    margin-right: 10px;
+}
+.x1
+{
+    width: 25px;
+    margin-right: 10px;
+}
+.instagram
+{
+    width: 30px;
+    margin-right: 10px;
+}
+.facebook
+{
+    width: 35px;
+    margin-right: 10px
+}
+.prefeitura
+{
+    width: 45px ;
+    margin-left: -8px;
+}
+.logos
+{
+   
+    width: 100vw;
+    height: 35vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.video1
+{
+    margin-top: 200px;
+    width: 820px;
+    height: 580px;
+    cursor: url(img/cursor1.png), auto;
+    border-radius: 15px;
+}
+.caixa
+{
+    margin-top: 20px;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 350px;
+    height: 630px;
+    padding: 15px;
+    background-color: #EEECF3;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    flex-direction: column;
+    position: relative;
+    margin-left: 65%;
+   margin-top: -550px;
+   z-index: 1;
+    border-radius: 10px;
+}
+.caixa::after
+{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: 2px;
+    border: 2px solid white;
+    outline: 1px solid #EEECF3;
+    border-radius: 10px;
+}
+.cxt1
+{
+position: relative;
+overflow: scroll;
+color: rgb(0, 0, 0);
+font-family: 'font1';
+font-size: 20px;
+text-align: justify;
+background-color: #EEECF3;
+width: 350px;
+height: 100%;
+flex-grow: 1;
+flex-shrink: 1;
+flex-basis: auto;
+flex-direction: column;
+z-index: 1;
+border-radius: 10px;
+}
+.cxt1::-webkit-scrollbar
+{
+    width: 0px;
+    height: 0px;
+}
+.cxt1::-webkit-scrollbar-track
+{
+    color: black;
+}
+.cxt1::-webkit-scrollbar-corner
+{
+    color: black;
+}
+.nav3
+{
+    
+    position:absolute  ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 386px;
+    height: 45px;
+    background-color: #EC6608;
+    margin-left: -18px;
+    margin-top: -25px;
+    z-index: 17;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.vdcx
+{
+    width: 70vw;
+    /*background-color: aquamarine;*/
+    margin-left: 20%;
+    height: 60vw;
+    justify-content: space-between;
+}
+.nav4
+{
+    position:absolute  ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 820px;
+    height: 90px;
+    background-color: #EC6608;
+    margin-left: 0px;
+    font-family: 'font1';
+    margin-top: -90px;
+    z-index: 17;  
+    font-size: 30px;
+    border-radius: 15px;
+}
+.nav4 a 
+{
+    margin-left: 20px;
+    color: #EEECF3;
+}
+.nav5
+{
+    position:absolute  ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 820px;
+    height: 150px;
+    background-color: #EEECF3;
+    margin-left: 0vw;
+    border-radius: 15px;
+    margin-top: 40px;
+    z-index: 17;  
+    font-size: 1rem;
+}
+.nav5 a
+{
+    margin-right: 10px;
+    margin-right: 20px;
+    text-align: justify;
+}
+.logo2
+{
+    width: 180px;
+    margin-left: 30px; 
+    margin-right: 20px;
+}
+
+.e1
+{
+    font-family: 'font1';
+   
+}
+.saibamais
+{
+    font-family: 'font1';
+    color: #EC6608
+}
+.saibamais:hover
+{
+ color: blue;   
+}
+.navmaisnav1
+{
+    position: fixed;
+   display: flex;
+    z-index: 2;
+    margin-top: -200px;
+}
+.titulovereador1
+{
+     text-align: center;
+     margin-top: 200px;
+     font-family: 'font1';
+     font-size: 1.5rem;
+}
+.campanhavereador1
+{
+    width: 400px;
+    height: 500px;
+    margin-left: 470px;
+}
+@media screen and (max-width: 1500px)
+{
+    
+  .logos
+  {
+    margin-right: 80px;
+    margin-left: 80px;
+  }
+  .d,
+  .e,
+  .f,
+  .g
+  {
+   margin-right: 10px;
+   color: black;
+   font-family: 'font1'; 
+   font-size: 17px;
+   justify-content: center;
+   text-align: center;
+   margin-left: 10px;
+  }
+ .logo1
+ {
+    width: 150px;
+    margin-right: 10px;
+    margin-left: 10px;
+ }
+ .video1
+ {
+    margin-left: -200px;
+    width: 780px;
+ }
+ .nav4
+ {
+    margin-left: -200px;
+    width: 780px;
+ }
+ .nav5
+ {
+    margin-left: -200px;
+    width: 780px;
+ }
+ .a,
+ .b,
+ .c
+ {
+ font-size: 11px;
+ justify-content: center;
+ justify-items: center;
+ align-items: center;
+ 
+ }
+ .logo1
+ {
+    width: 200px;
+    margin-left: 80px;
+ }
+
+}
+@media screen and (max-width: 1000px) 
+{
+
+    
+  .logo1
+  {
+    width: 150px;
+    margin-left: 50px;
+  }
+  .d,
+  .e,
+  .f,
+  .g
+  {
+    font-size: 10px;
+  }
+  .candidato,
+  .vereadores,
+  .sobre,
+  .propostas
+  {
+    font-size: 1rem;
+  }
+  .dropdown1-menu a 
+  {
+    font-size: 17px;
+  }
+  .dropdown2-menu a 
+  {
+    font-size: 17px;
+  }
+  .dropdown3-menu a 
+  {
+    font-size: 17px;
+  }
+  .dropdown1-menu
+  {
+    width: 300px;
+  }
+  .dropdown2-menu
+  {
+    width: 300px;
+  }
+  .dropdown3-menu
+{
+    width: 500px;
+}
+.video1
+{
+    width: 600px ;
+    margin-left: -180px;
+}
+.nav4
+{
+    width: 600px;
+    margin-left: -180px;
+    font-size: 1.3rem;
+    height: 80px;
+}
+.nav5
+{
+    width: 600px;
+    margin-left: -180px;
+    font-size: 0.8rem;
+    height: 90px;
+    margin-top: 20px;
+}
+.logo2
+{
+width: 100px;
+}
+.linkedin
+{
+    width: 25px;
+}
+.tiktok
+{
+    width: 20px;
+   margin-top: 2px;
+}
+.youtube
+{
+    width: 25px;
+    margin-top: 3px;
+}
+.x1
+{
+    width: 20px;
+}
+.instagram
+{
+    width: 25px;
+    margin-top: 2px;
+}
+.facebook
+{
+    width: 30px;
+}
+.prefeitura
+{
+    width: 40px;
+    margin-top: 2px;
+}
+.a1,
+.b1
+{
+    font-size: 0.7rem;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.barra
+{
+    font-size: 0.7rem;
+margin-left: -2px;
+margin-right: -2px;
+
+}
+
+.a,
+.b,
+.c
+{
+    font-size: 0.6rem;
+}
+.caixa
+{
+    width: 230px;
+}
+.cxt1
+{
+    width: 230px;
+}
+.nav3
+{
+    width: 266px;
+}
+.c1
+{
+    font-size: 0.7rem;
+}
+.calendario
+{
+width: 25px;
+margin-right: 10px;
+}
+.text1
+{
+    font-size: 1rem;
+    margin-top: 25px;
+}
+}
+@media screen and (max-width:800px) 
+{
+ 
+ .logo1
+  {
+    width: 100px;
+    margin-left: 30px;
+  }
+  .d,
+  .e,
+  .f,
+  .g
+  {
+    font-size: 20px;
+  }
+  nav 
+  {
+    width: 100vw;
+    height: 9vw;
+  }
+  .candidato,
+  .vereadores,
+  .sobre,
+  .propostas
+  {
+    font-size: 0.7rem;
+  }
+  .icn1,
+  .icn2,
+  .icn3
+  {
+    width: 8px;
+  }
+
+  .dropdown1-menu a 
+  {
+    font-size: 0.7rem;
+  }
+  .dropdown2-menu a 
+  {
+    font-size: 0.7rem;
+  }
+  .dropdown3-menu a 
+  {
+    font-size: 0.7rem;
+  }
+  .dropdown1-menu
+  {
+    width: 200px;
+    height: 90px;
+  }
+  .dropdown2-menu
+  {
+    width: 200px;
+    height: 90px;
+  }
+  .dropdown3-menu
+{
+    width: 400px;
+    height: 120px;
+}
+.video1
+{
+    width: 360px ;
+    margin-left: -100px;
+    height: 400px;
+    margin-top: 150px;
+}
+.nav4
+{
+    width: 360px;
+    margin-left: -100px;
+    font-size: 0.8rem;
+    height: 80px;
+    margin-top: -80px;
+}
+.nav5
+{
+    width: 360px;
+    margin-left: -100px;
+    font-size: 0.6rem;
+    height: 140px;
+    margin-top: 30px;
+}
+.logo2
+{
+width: 80px;
+}
+.linkedin
+{
+    width: 20px;
+}
+.tiktok
+{
+    width: 15px;
+   margin-top: 3px;
+}
+.youtube
+{
+    width: 20px;
+    margin-top: 4px;
+}
+.x1
+{
+    width: 15px;
+    margin-top: 3px;
+}
+.instagram
+{
+    width: 20px;
+    margin-top: 3px;
+}
+.facebook
+{
+    width: 25px;
+    margin-top: 3px;
+}
+.prefeitura
+{
+    width: 35px;
+    margin-top: 3px;
+}
+.a1,
+.b1
+{
+    font-size: 0.5rem;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.barra
+{
+    font-size: 0.5rem;
+margin-left: 4px;
+margin-right: 4px;
+
+}
+
+.a,
+.b,
+.c
+{
+    font-size: 0.4rem;
+}
+.caixa
+{
+    width: 170px;
+    margin-top: -370px;
+    height: 425px;
+}
+.cxt1
+{
+    width: 170px;
+    height: 425px;
+}
+.nav3
+{
+    width: 206px;
+}
+.c1
+{
+    font-size: 0.5rem;
+}
+.calendario
+{
+width: 20px;
+margin-right: 15px;
+}
+.text1
+{
+    font-size: 0.7rem;
+    margin-top: 25px;
+} 
+
+}
+@media screen and (max-width:700px) 
+{
+  .a,
+  .b,
+  .c
+  {
+    font-size: 0.8rem;
+  }
+
+ .logo1
+  {
+    width: 60px;
+    margin-left: 30px;
+  }
+  .d,
+  .e,
+  .f,
+  .g
+  {
+    font-size: 20px;
+  }
+  .nav1
+   {
+    height: 10vw;
+   }
+  nav 
+  {
+    width: 100vw;
+    height: 14vw;
+    margin-top: 50px;
+  }
+  
+  .candidato,
+  .vereadores,
+  .sobre,
+  .propostas
+  {
+    font-size: 0.7rem;
+    margin-left: 30px;
+  }
+  .icn1,
+  .icn2,
+  .icn3
+  {
+    width: 8px;
+  }
+
+  .dropdown1-menu a 
+  {
+    font-size: 0.7rem;
+  }
+  .dropdown2-menu a 
+  {
+    font-size: 0.7rem;
+  }
+  .dropdown3-menu a 
+  {
+    font-size: 0.7rem;
+  }
+  .dropdown1-menu
+  {
+    width: 150px;
+    height: 130px;
+  }
+  .dropdown2-menu
+  {
+    width: 150px;
+    height: 130px;
+  }
+  .dropdown3-menu
+{
+    width: 350px;
+    height: 130px;
+}
+.video1
+{
+    width: 300px ;
+    margin-left: -80px;
+    height: 360px;
+    margin-top: 150px;
+}
+.nav4
+{
+    width: 300px;
+    margin-left: -80px;
+    font-size: 0.9rem;
+    height: 60px;
+    margin-top: -100px;
+}
+.nav5
+{
+    width: 300px;
+    margin-left: -80px;
+    font-size: 0.6rem;
+    height: 150px;
+    margin-top: -20px;
+}
+.logo2
+{
+width: 80px;
+}
+.logos
+{
+    margin-left: 30px;
+}
+.linkedin
+{
+    width: 15px;
+}
+.tiktok
+{
+    width: 15px;
+   margin-top: 4px;
+}
+.youtube
+{
+    width: 15px;
+    margin-top: 5px;
+}
+.x1
+{
+    width: 15px;
+    margin-top: 4px;
+}
+.instagram
+{
+    width: 15px;
+    margin-top: 4px;
+}
+.facebook
+{
+    width: 20px;
+    margin-top: 4px;
+}
+.prefeitura
+{
+    width: 25px;
+    margin-top: 4px;
+}
+.a1,
+.b1
+{
+    font-size: 0.6rem;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.barra
+{
+    font-size: 0.6rem;
+margin-left: 4px;
+margin-right: 4px;
+
+}
+
+.a,
+.b,
+.c
+{
+    font-size: 0.6rem;
+    margin-left: 15px;
+}
+.caixa
+{
+    width: 110px;
+    margin-top: -310px;
+    height: 400px;
+    margin-left: 240px;
+}
+.cxt1
+{
+    width: 110px;
+    height: 400px;
+}
+.nav3
+{
+    width: 146px;
+}
+.c1
+{
+    font-size: 0.5rem;
+    justify-content:space-between;
+}
+.calendario
+{
+width: 15px;
+margin-right: 15px;
+}
+.text1
+{
+    font-size: 0.7rem;
+    margin-top: 25px;
+}   
+}

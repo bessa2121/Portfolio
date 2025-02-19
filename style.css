@@ -1,0 +1,167 @@
+/* Definir a cor de fundo e a fonte padrão para o corpo da página */
+body {
+    background-color: #ebeef2; /* Cor de fundo clara */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #011640; /* Cor do texto padrão */
+    text-align: center;
+  }
+
+  /* Estilizando o cabeçalho */
+  header {
+    background-color: #011640; /* Azul escuro */
+    color: #ebeef2; /* Texto branco claro */
+    padding: 20px 20px 10px 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 36px;
+  }
+  
+  /* Estilizando a lista de navegação */
+  header ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  header ul li {
+    box-shadow: 0 2px 5px #000000;
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  header ul li a {
+    color: #000000; /* Cor branca para os links */
+    text-decoration: none;
+    font-size: 18px;
+  }
+  
+  a{
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px #000000;
+    border: #ffffff 10px solid;
+    border-radius: 10px;
+    transition: all 0.8s ease; /* Suaviza a transição de borda e fundo */
+    list-style-type: none;
+    text-decoration: none;
+    color: #000000;
+  }
+
+  a:hover  {
+    border: #274360 10px solid;
+    background-color: #274360;
+    color: #ffffff; /* Adiciona uma cor de texto branca quando estiver no hover */
+  }
+
+  a#PDP{
+    border: #ffffff 10px solid;
+    background-color: #ffffff;
+    color: #000000;
+    transition: all 0.8s ease; /* Suaviza a transição de borda e fundo */
+  }
+
+  a#PDP:hover  {
+    background-color: #274360 ;
+    border: #274360 10px solid;
+    border-radius: 10px; /* Adiciona uma cor de texto branca quando estiver no hover */
+    color: #ffffff;
+  }
+
+  
+  /* Estilizando o container das seções para usarmos Flexbox */
+  .section-container {
+    display: grid; /* Usando o Flexbox */
+    justify-content: space-between; /* Alinhamento das seções com espaçamento */
+    gap: 20px; /* Espaçamento entre as seções */
+    padding: 20px;
+    margin: 0 20px;
+    flex-wrap: wrap; /* Permite que as seções se ajustem em telas menores */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    margin: 0; /* Remove a margem padrão */
+  }
+  
+  /* Estiliza a section */
+section {
+    background-color: #ffffff; /* Cor de fundo branca para a seção */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 5px #000000;
+    width: 100%; /* Largura da seção */
+    max-width: 800px; /* Largura máxima */
+    box-sizing: border-box; /* Garantir que o padding seja considerado no cálculo da largura */
+}
+
+  
+  section h4 {
+    font-size: 15px;
+    color: #000000;
+    text-align: center;
+  }
+  
+  section p {
+    font-size: 16px;
+    line-height: 1.5
+  }
+
+  section a{
+    display: block;
+    box-shadow: 5px 5px 5px #000000;
+    background-color: #001f40;
+    border: #001f40 10px solid;
+    border-radius: 10px;
+    color: #ffffff;
+  }
+
+  section a:hover{
+    background-color: #ebeef2 ;
+    border: #ebeef2 10px solid;
+    border-radius: 10px;
+    color: #000000;
+  }
+  
+  /* Estilizando o rodapé */
+  footer {
+    background-color: #011640; /* Azul médio */
+    color: #ebeef2; /* Texto branco */
+    text-align: center;
+    padding: 20px 0 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  footer a {
+    text-decoration: none;
+  }
+  
+  
+  /* Responsividade para telas menores */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 28px;
+    }
+  
+    header ul li {
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    .section-container {
+      display: block; /* Alinhamento vertical das seções em telas pequenas */
+      margin: 20px 0;
+    }
+  
+    section {
+      width: 100%; /* As seções ocupam 100% da largura em dispositivos menores */
+      margin-bottom: 20px;
+    }
+  
+    footer p {
+      font-size: 14px;
+    }
+  }
+  

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 18</title>
+    <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+</head>
+<body>
+    <h2>Exercício 18</h2>
+    <p>
+        Francisco tem 1,10m e cresce 3 centímetros por ano, enquanto Sara tem 1,50m e cresce 2 centímetros por ano. 
+        Faça um algoritmo que calcule e imprima na tela em quantos anos serão necessários para que Francisco seja maior que Sara.
+    </p><br>
+    <button onclick="main()">Clique para descobrir</button><br>
+    <p id="output"></p>
+    <p id="sara"></p>
+    <p id="francisco"></p>
+
+    <script>
+        function main(){
+            const output = document.getElementById('output');
+            const outputS = document.getElementById('sara');
+            const outputF = document.getElementById('francisco');
+            var franciscoAltura = 1.1;
+            const franciscoCresce = 0.03;
+            var saraAltura = 1.5;
+            const saraCresce = 0.02;
+            var tempo = 0;
+
+            while(franciscoAltura <= saraAltura){
+                franciscoAltura += franciscoCresce;
+                saraAltura += saraCresce;
+                tempo++
+            }
+            output.textContent = `Serão necessários ${tempo} anos:`;
+            outputF.textContent = `Francisco: ${franciscoAltura.toFixed(2)} m`
+            outputS.textContent = `Sara: ${saraAltura.toFixed(2)} m`
+        }
+    </script>
+</body>
+</html>

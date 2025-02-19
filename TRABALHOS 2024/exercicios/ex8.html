@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+    <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+</head>
+<body>
+    <h2>Exercício 8</h2>
+    <p>Faça um algoritmo que leia três valores diferentes e imprima na tela os valores em ordem decrescente.</p><br>
+    <input type="number" id="a" placeholder="A"><br>
+    <input type="number" id="b" placeholder="B"><br>
+    <input type="number" id="c" placeholder="C"><br>
+    <button onclick="main()">Clique para executar</button><br>
+    <p id="output"></p>
+
+    <script>
+        function main(){
+            const a = parseFloat(document.getElementById('a').value);
+            const b = parseFloat(document.getElementById('b').value);
+            const c = parseFloat(document.getElementById('c').value);
+            const output = document.getElementById('output');
+
+            if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                output.textContent = 'Insira todos os números, por favor.';
+            } else if (a == b || a == c || b == c){
+                output.textContent = 'Coloque números diferentes, por favor.';
+            } else {
+                var array = [a, b, c];
+                array = array.sort(function(a, b){return b - a});
+                output.textContent = `${array[0]}, ${array[1]}, ${array[2]}`;
+            }
+        }
+    </script>
+</body>
+</html>

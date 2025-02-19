@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+    <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+</head>
+<body>
+    <h2>Exercício 2</h2>
+    <p>Faça um algoritmo para receber um número qualquer e imprimir na tela se o número é par ou ímpar e positivo ou negativo.</p><br>
+    <input type="number" id="n" placeholder="Insira um número"><br>
+    <button onclick="main()">Clique para executar</button><br>
+    <p id="output"></p>
+
+    <script>
+        function main(){
+            // definindo variáveis
+            const n = parseFloat(document.getElementById('n').value);
+            const output = document.getElementById('output');
+
+            // lógica
+            if (!isNaN(n)) {
+                // par ou ímpar
+                if (n % 2 == 0) {
+                    output.textContent = 'O número é par ';
+                } else {
+                    output.textContent = 'O número é ímpar ';
+                }
+                // positivo ou negativo
+                if (n == 0) {
+                    output.textContent += 'e zero';
+                } else if (n > 0) {
+                    output.textContent += 'e positivo';
+                } else {
+                    output.textContent += 'e negativo';
+                }
+            } else {
+                output.textContent = 'Insira os números, por favor.';
+            }
+        }
+    </script>
+</body>
+</html>

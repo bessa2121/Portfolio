@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="icon" type="image/png" href="./OIG2.iVCUmEFqS5dS-removebg-preview.png">
+    <title>Rossini Pizzera - Faça o seu pedido</title> 
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./pedir.html">Peça Já</a></li>
+                <li><a href="./index.html">Menu</a></li>
+                <li><a href="./pizzas.html">Pizzas</a></li>
+                <li><a href="./esfihas.html">Esfihas</a></li>
+                <li><a href="./sobre_nos.html">Sobre Nós</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="pedido">
+        <h1 style="color: white;">Faça já o seu pedido:</h1>
+        <form style="width: 600px;">
+            <fieldset>
+                <legend>Pizza:</legend>
+                <label>Sabores:</label>
+                <select name="pizzas">
+                    <option value="margherita">Marguerita</option>
+                    <option value="pepperoni">Pepperoni</option>
+                    <option value="quattro-stagioni">Quatro Stagioni</option>
+                    <option value="veggie">Veggie</option>
+                    <option value="calabresa">Calabresa</option>
+                    <option value="quatro-queijos">Quatro Queijos</option>
+                    <option value="portuguesa">Portuguesa</option>
+                    <option value="carbonara">Carbonara</option>
+                    <option value="bbq-chicken">BBQ Chicken</option>
+                    <option value="havaiana">Havaiana</option>
+                    <option value="mediterranea">Mediterrânea</option>
+                    <option value="frango-catupiry">Frango com Catupiry</option>
+                </select>
+                <label>Insira quantidade de pizzas:</label>
+                <input type="number" min="0" id="pizza" name="pizzas" value="1">
+            </fieldset>
+            <fieldset>
+                <legend>Esfiha:</legend>
+                <label>Sabores:</label>
+                <select name="esfihas">
+                    <option value="carne">Carne</option>
+                    <option value="frango">Frango</option>
+                    <option value="queijo">Queijo</option>
+                    <option value="chocolate">Chocolate</option>
+                    <option value="morango">Morango</option>
+                    <option value="limao">Limão</option>
+                    <option value="palmito">Palmito</option>
+                    <option value="bacon">Bacon</option>
+                    <option value="margherita">Margherita</option>
+                    <option value="alho-poro">Alho Poró</option>
+                    <option value="cheddar">Cheddar</option>
+                    <option value="tomate-seco">Tomate Seco</option>
+                </select>
+                <label>Insira quantidade de esfihas:</label>
+                <input type="number" min="0" id="esfiha" name="esfihas" value="1">
+            </fieldset>
+            <fieldset>
+                <legend>Bebida:</legend>
+                <select>
+                    <option value="agua">Água</option>
+                    <option value="agua-gas">Água com Gás</option>
+                    <option value="coca">Coca-Cola</option>
+                    <option value="coca-zero">Coca-Cola Zero</option>
+                    <option value="fanta-uva">Fanta Uva</option>
+                    <option value="fanta-laranja">Fanta Laranja</option>
+                    <option value="fanta-guarana">Fanta Guaraná</option>
+                    <option value="cerveja">Cerveja</option>
+                </select>
+                <label>Insira quantidade de bebidas:</label>
+                <input type="number" min="0" id="bebida" name="bebidas" value="1">
+            </fieldset>
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>

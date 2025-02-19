@@ -1,0 +1,85 @@
+body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(168deg, #c93103, #ce6300);
+}
+img{
+    padding-left: 12%;
+    width: 250px;
+    height: 150px;
+}
+
+nav {
+    background-color: #333;
+    padding: 15px 0;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+li {
+    margin: 0 15px;
+}
+
+li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+li a:hover {
+    background-color: rgb(231, 195, 151);
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #b68751;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2{
+    text-align: center;
+    color: #333;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.menu-item {
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.menu-item h2 {
+    margin-top: 0;
+    color: #444;
+}
+
+.menu-item p {
+    margin: 5px 0;
+}
+
+.menu-item .price {
+    font-weight: bold;
+    color: #e74c3c;
+}
