@@ -43,7 +43,7 @@ body {
     background-color: #ffffff;
     box-shadow: 0 2px 5px #000000;
     border: #ffffff 10px solid;
-    border-radius: 10px;
+    border-radius: 7px;
     transition: all 0.8s ease; /* Suaviza a transição de borda e fundo */
     list-style-type: none;
     text-decoration: none;
@@ -66,7 +66,7 @@ body {
   a#PDP:hover  {
     background-color: #274360 ;
     border: #274360 10px solid;
-    border-radius: 10px; /* Adiciona uma cor de texto branca quando estiver no hover */
+    border-radius: 7px; /* Adiciona uma cor de texto branca quando estiver no hover */
     color: #ffffff;
   }
 
@@ -112,14 +112,14 @@ section {
     box-shadow: 5px 5px 5px #000000;
     background-color: #001f40;
     border: #001f40 10px solid;
-    border-radius: 10px;
+    border-radius: 7px;
     color: #ffffff;
   }
 
   section a:hover{
     background-color: #ebeef2 ;
     border: #ebeef2 10px solid;
-    border-radius: 10px;
+    border-radius: 7px;
     color: #000000;
   }
   
