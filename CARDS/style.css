@@ -1,0 +1,131 @@
+/* Resetando margens e preenchimentos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  /* Estilo para o body com fundo degradê */
+  body {
+    background: linear-gradient(to bottom, #cc9122, #8a5f10); /* Degradê dourado para laranja escuro */
+    font-family: Arial, sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Garante que o footer fique no final */
+  }
+  
+  /* Estilo do header */
+  header {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+    margin: 0;
+  }
+  
+  /* Estilo do main */
+  main {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1; /* Permite que o main ocupe o espaço restante */
+  }
+  
+  main h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  main p {
+    font-size: 1.2em;
+  }
+  
+  /* Estilo do footer */
+  footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 10px;
+  }
+  
+  footer p {
+    font-size: 1em;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap; /* Garante que as caixas se ajustem em telas menores */
+  }
+  
+
+  img{
+    border: #555454 15px solid;
+  }
+
+  .box {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Para esconder qualquer conteúdo que ultrapasse o limite da caixa */
+    width: 14%; /* Cada caixa ocupa 23% do espaço, permitindo 4 caixas lado a lado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .box:hover {
+    transform: translateY(-30px); /* Efeito de hover para dar sensação de elevação */
+  }
+  
+  .box img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Garante que a imagem cubra toda a área da caixa */
+  }
+  
+  .box h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  .box p {
+    font-size: 1em;
+    color: #666;
+    padding: 0 10px 20px;
+  }
+  
+  @media (max-width: 1024px) {
+    .box {
+      width: 45%; /* Em telas médias, as caixas ocupam 45% da largura */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .box {
+      width: 30%; /* Em telas menores, as caixas ocupam 30% da largura */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .box {
+      width: 90%; /* Em telas muito pequenas, as caixas ocupam 90% da largura */
+    }
+  }
+
+  .bct a{
+    text-decoration: none;
+    color: white;
+    background-color:rgba(0, 0, 0, 0.5);
+    border: white 5px solid;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  

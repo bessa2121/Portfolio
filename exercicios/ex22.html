@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 22</title>
+    <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+</head>
+<body>
+    <h2>Exercício 22</h2>
+    <p>Faça um algoritmo que leia dois valores inteiros A e B, imprima na tela o quociente e o resto da divisão inteira entre eles.</p><br>
+    <input type="number" id="a" placeholder="A"><br>
+    <input type="number" id="b" placeholder="B"><br>
+    <button onclick="main()">Clique para executar</button><br>
+    <p id="quociente"></p>
+    <p id="resto"></p>
+
+    <script>
+        function main(){
+            const outputQ = document.getElementById('quociente');
+            const outputR = document.getElementById('resto');
+            const a = parseFloat(document.getElementById('a').value);
+            const b = parseFloat(document.getElementById('b').value);
+
+            outputQ.textContent = `Quociente: ${a/b}`;
+            outputR.textContent = `Resto: ${a%b}`;
+        }
+    </script>
+</body>
+</html>

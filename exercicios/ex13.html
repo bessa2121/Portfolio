@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+    <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+</head>
+<body>
+    <h2>Exercício 13</h2>
+    <p>Faça algoritmo que leia o nome e a idade de uma pessoa e imprima na tela o nome da pessoa e se ela é maior ou menor de idade. </p><br>
+    <input type="text" id="nome" placeholder="Insira seu nome"><br>
+    <input type="number" id="idade" min="0" placeholder="Insira sua idade"><br>
+    <button onclick="main()">Clique para executar</button><br>
+    <p id="output"></p>
+
+    <script>
+        function main(){
+            const nome = document.getElementById('nome').value;
+            const idade = parseInt(document.getElementById('idade').value);
+            const output = document.getElementById('output');
+
+            if (!isNaN(idade) && nome != '') {
+                if (idade >= 18){
+                    output.textContent = `${nome} é maior de idade`;
+                } else {
+                    output.textContent = `${nome} é menor de idade`;
+                }
+            } else {
+                output.textContent = 'Insira as informações, por favor.'
+            }
+        }
+    </script>
+</body>
+</html>

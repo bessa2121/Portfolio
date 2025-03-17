@@ -1,0 +1,43 @@
+/* Resetando margens e preenchimentos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;   
+}
+
+/* Estilo para o body com fundo degradê */
+body {
+  background: linear-gradient(to bottom,  #cc9122, #8a5f10); /* Degradê dourado para laranja escuro */
+  font-family: Arial, sans-serif;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Garante que o footer fique no final */
+  background-size: 200% 200%; /* Faz o gradiente se expandir e criar um padrão contínuo */
+}
+
+img{
+  border: #fff 5px solid;
+}
+
+@media (max-width: 1024px) {
+  .box {
+    width: 12%; /* Em telas médias, as caixas ocupam 48% da largura */
+  }
+}
+
+@media (max-width: 768px) {
+  .box {
+    width: 24%; /* Em telas menores, as caixas ocupam metade da largura */
+  }
+}
+
+@media (max-width: 480px) {
+  .box {
+    width: 80%; /* Em telas muito pequenas, as caixas ocupam 100% da largura */
+  }
+}

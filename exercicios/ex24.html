@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 24</title>
+    <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+</head>
+<body>
+    <h2>Exercício 24</h2>
+    <p>Faça um algoritmo que calcule a quantidade de litros de combustível gastos em uma viagem, sabendo que o carro faz 12km com um litro. Deve-se fornecer ao usuário o tempo que será gasto na viagem e a sua velocidade média.</p><br>
+    <input type="number" id="tempo" placeholder="Tempo gasto"><br>
+    <input type="number" id="velocidade" placeholder="Velocidade Média"><br>
+    <button onclick="main()">Clique para execultar</button><br>
+    <p id="output"></p>
+
+    <script>
+        function main(){
+            const tempo = parseFloat(document.getElementById('tempo').value);
+            const velocidade = parseFloat(document.getElementById('velocidade').value);
+            const output = document.getElementById('output');
+
+            output.textContent = `Litros gastos: ${velocidade * tempo / 12}`;
+        }
+    </script>
+</body>
+</html>

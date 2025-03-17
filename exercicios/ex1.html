@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+    <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+</head>
+<body>
+    <h2>Exercício 1</h2>
+    <p>Faça um algoritmo que leia os valores de A, B e C. Em seguida, imprima na tela a soma entre A e B, e mostre se a soma é maior ou menor que C.</p><br>
+    <input type="number" placeholder="A" id="a"><br>
+    <input type="number" placeholder="B" id="b"><br>
+    <input type="number" placeholder="C" id="c"><br>
+    <button onclick="main()">Clique para executar</button>
+    <p id="outputSoma"></p>
+    <p id="outputMaior"></p>
+
+    <script>
+        function main(){
+            // recebendo valores
+            const a = parseFloat(document.getElementById('a').value);
+            const b = parseFloat(document.getElementById('b').value);
+            const c = parseFloat(document.getElementById('c').value);
+            const soma = document.getElementById('outputSoma');
+            const maior = document.getElementById('outputMaior');
+            
+            // lógica
+            if (!isNaN(a) && !isNaN(b) && !isNaN(c)){
+                var ab = a + b;
+                soma.textContent = `Soma: ${ab}`;
+                
+                if (ab > c){
+                    maior.textContent = 'C é menor que A + B';
+                } else if (ab == c) {
+                    maior. textContent = 'C é igual a A + B'
+                } else {
+                    maior.textContent = 'C é maior que A + B';
+                }
+            } else {
+                soma.textContent = 'Insira números, por favor.';
+                maior.textContent = '';
+            }
+        }
+    </script>
+</body>
+</html>

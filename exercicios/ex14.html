@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+    <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+</head>
+<body>
+    <h2>Exercício 14</h2>
+    <p>Faça um algoritmo que receba um valor A e B, e troque o valor de A por B e o valor de B por A e imprima na tela os valores.</p><br>
+    <input type="number" placeholder="A" id="a"><br>
+    <input type="number" placeholder="B" id="b"><br>
+    <button onclick="main()">Clique para executar</button><br>
+    <p id="outputA"></p>
+    <p id="outputB"></p>
+
+    <script>
+        function main(){
+            var a = parseFloat(document.getElementById('a').value);
+            var b = parseFloat(document.getElementById('b').value);
+            const outputA = document.getElementById('outputA');
+            const outputB = document.getElementById('outputB');
+
+            if (!isNaN(a) && !isNaN(b)){
+                [a, b] = [b, a];
+                outputA.textContent = `A = ${a}`;
+                outputB.textContent = `B = ${b}`;
+            } else {
+                outputA.textContent = 'Insira os números, por favor.';
+                outputB.textContent = '';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Impacto Ambiental</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Calculadora de Impacto Ambiental</h1>
+    <p>Descubra como suas escolhas afetam o planeta!</p>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>Consumo de Energia</h2>
+      <label for="energia">Quantidade de energia (kWh): </label>
+      <input type="number" id="energia" placeholder="Ex: 100" />
+    </section>
+    
+    <section>
+      <h2>Consumo de Água</h2>
+      <label for="agua">Quantidade de água (litros): </label>
+      <input type="number" id="agua" placeholder="Ex: 200" />
+    </section>
+
+    <section>
+      <h2>Consumo de Alimentos</h2>
+      <label for="alimentos">Quantidade de alimentos (kg): </label>
+      <input type="number" id="alimentos" placeholder="Ex: 2" />
+    </section>
+
+    <button id="calcular">Calcular Impacto</button>
+  </div>
+
+  <section class="resultados">
+    <h2>Impacto Ambiental Estimado</h2>
+    <canvas id="impactoChart" width="350" height="150"></canvas>
+  </section>
+
+  <footer>
+    <p>Projeto feito com o intuito de promover práticas sustentáveis. <a href="https://www.wwf.org.br" target="_blank">Saiba mais sobre sustentabilidade.</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

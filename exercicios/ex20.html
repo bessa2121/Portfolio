@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 20</title>
+    <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+</head>
+<body>
+    <h2>Exercício 20</h2>
+    <p>Faça um algoritmo que receba um valor inteiro e imprima na tela a sua tabuada.</p><br>
+    <input type="number" placeholder="Número" id="n"><br>
+    <button onclick="main()">Clique para executar</button>
+    <div id="tabuada"></div>
+
+    <script>
+        function main(){
+            const tabuada = document.getElementById('tabuada');
+            const n = parseInt(document.getElementById('n').value);
+            const tabuadaDiv = document.createElement("div");
+
+            if (!isNaN(n)){
+                let tabuadaTexto = `<h2>Tabuada do ${n}</h2>`
+                    
+                for (let i = 1; i <= 10; i++){
+                    tabuadaTexto += `<p>${n} x ${i} = ${n * i}</p>`
+                }
+
+                tabuadaDiv.innerHTML = tabuadaTexto;
+                tabuada.appendChild(tabuadaDiv);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+    <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+</head>
+<body>
+    <h2>Exercício 3</h2>
+    <p>Faça um algoritmo que leia dois valores, A e B. Se A for igual a B, deverá somar os dois valores, caso contrário deverá multiplicar A por B. Ao final, deve-se atribuir o resultado a uma variável C e imprimir seu valor na tela.</p><br>
+    <input type="number" id="a" placeholder="A"><br>
+    <input type="number" id="b" placeholder="B"><br>
+    <button onclick="main()">Clique para executar</button><br>
+    <p id="output"></p>
+
+    <script>
+        function main(){
+            // recebendo valores
+            const a = parseFloat(document.getElementById('a').value);
+            const b = parseFloat(document.getElementById('b').value);
+            const output = document.getElementById('output');
+            var c = 0;
+
+            // lógica
+            if (!isNaN(a) && !isNaN(b)) {
+                if (a == b) {
+                    c = a + b;
+                } else {
+                    c = a * b;
+                }
+                output.textContent = c;
+            } else {
+                output.textContent = 'Insira os números, por favor.';
+            }
+        }
+    </script>
+</body>
+</html>

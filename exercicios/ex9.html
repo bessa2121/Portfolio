@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+    <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+</head>
+<body>
+    <h2>Exercício 9</h2>
+    <p>Faça um algoritmo que calcule o IMC (Índice de Massa Corporal) de uma pessoa, leia o seu peso e sua altura e imprima na tela sua condição.</p><br>
+    <input type="number" id="altura" placeholder="Altura em metros"><br>
+    <input type="number" id="peso" placeholder="Peso em kilos"><br>
+    <button onclick="main()">Clique para executar</button><br>
+    <p id="imc"></p>
+    <p id="condicao"></p>
+
+    <script>
+        function main(){
+            const altura = parseFloat(document.getElementById('altura').value);
+            const peso = parseFloat(document.getElementById('peso').value);
+            const numIMC = document.getElementById('imc');
+            const condicao = document.getElementById('condicao');
+
+            if (!isNaN(altura) && !isNaN(peso)){
+                var imc = peso / (altura * altura);
+                numIMC.textContent = `Seu IMC é: ${imc}`;
+
+                if (imc <= 18.5){condicao.textContent = 'Você está abaixo do peso.'}
+                else if (imc <= 24.9){condicao.textContent = 'Você está no seu peso ideal, parabéns.'}
+                else if (imc <= 29.9){condicao.textContent = 'Você está levemente acima do peso.'}
+                else if (imc <= 34.9){condicao.textContent = 'Você está com obesidade grau I.'}
+                else if (imc <= 39.9){condicao.textContent = 'Você está com obesidade grau II (severa).'}
+                else {condicao.textContent = 'Você está com obesidade grau III (mórbida).'}
+            } else {
+                numIMC.textContent = 'Insira os números, por favor.';
+                condicao.textContent = '';
+            }
+        }
+    </script>
+</body>
+</html>

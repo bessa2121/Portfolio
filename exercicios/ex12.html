@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+    <link rel="stylesheet" href="./CSS/style.css" type="text/css">
+</head>
+<body>
+    <h2>Exercício 12</h2>
+    <p>Faça um algoritmo que leia o valor de um produto e determine o valor que deve ser pago, conforme a escolha da forma de pagamento pelo comprador e imprima na tela o valor final do produto a ser pago. </p><br>
+    <input type="number" id="n" placeholder="Preço do produto"><br>
+    <label for="metodo">Método de pagamento:</label><br>
+    <select id="metodo" nome="metodo">
+        <option value='1'>À vista em dinheiro ou pix</option>
+        <option value="2">À vista no cartão de crédito</option>
+        <option value="3">Parcelado até 2 vezes</option>
+        <option value="4">Parcelado em 3 ou mais vezes</option>
+    </select><br>
+    <button onclick="main()">Clique para executar</button><br>
+    <p id="desconto"></p>
+    <p id="precoF"></p>
+
+    <script>
+        function main(){
+            const preco = parseFloat(document.getElementById('n').value);
+            const metodo = document.getElementById('metodo').value;
+            const opDesconto = document.getElementById('desconto');
+            const opPrecoF = document.getElementById('precoF');
+
+            if (!isNaN(preco)){
+                if (metodo == '1'){
+                    opDesconto.textContent = '15% de desconto';
+                    opPrecoF.textContent = `Preço final: R$${preco * 0.85}`;
+                } else if (metodo == '2'){
+                    opDesconto.textContent = '10% de desconto';
+                    opPrecoF.textContent = `Preço final: R$${preco * 0.9}`;
+                } else if (metodo == '3'){
+                    opDesconto.textContent = 'Sem desconto';
+                    opPrecoF.textContent = `Preço final: R$${preco}`;
+                } else {
+                    opDesconto.textContent = '10% de juros';
+                    opPrecoF.textContent = `Preço final: R$${preco * 1.1}`;
+                }
+            } else {
+                opDesconto.textContent = 'Insira o preço, por favor.';
+                opPrecoF.textContent = '';
+            }
+        }
+    </script>
+</body>
+</html>
