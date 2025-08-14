@@ -1,189 +1,372 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Clube de Investimentos - Gerando retornos positivos no mercado de ações">
-    <link rel="stylesheet" href="./styles.css">
-      <link rel="icon" type="image/png" href="./logo.jpg">
-    <title>La Brigabi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="La Brigabi – Doceria artesanal na Vila Matilde, SP. Bolos, doces e sobremesas sob encomenda com atendimento personalizado e entregas." />
+  <link rel="icon" type="image/png" href="./logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+  <title>La Brigabi • Doceria Artesanal</title>
 </head>
 
 <body>
-    <header>
-        <h1>La Brigabi</h1>
-        <p>Onde cada doce é um momento de felicidade!</p>
-        <nav>
-            <a href="#sobre">Sobre Nós</a>
-            <a href="#produtos">Produtos</a>
-            <a href="#encomendas">Encomendas</a>
-        </nav>
+  <!-- Header fixo -->
+  <header class="site-header">
+    <div class="brand">
+      <img class="brand-logo" src="./logo.jpg" alt="Logo La Brigabi" />
+      <div>
+        <h1 class="brand-title">La Brigabi</h1>
+        <p class="brand-subtitle">Onde cada doce é um momento de felicidade!</p>
+      </div>
+    </div>
+
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="#sobre">Sobre Nós</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#encomendas" class="btn cta">Encomendar</a>
+    </nav>
+  </header>
+
+  <!-- Botão de abrir sidebar -->
+  <button class="sidebar-toggle" aria-label="Abrir menu lateral">
+    <span aria-hidden="true">&#9776;</span>
+  </button>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" aria-label="Menu lateral">
+    <button class="sidebar-close" aria-label="Fechar menu lateral">&times;</button>
+
+    <div class="sidebar-logo">
+      <img src="./logo.jpg" alt="Logo La Brigabi" />
+      <p class="sidebar-slogan">Doces artesanais com carinho</p>
+    </div>
+
+    <div class="sidebar-social" aria-label="Redes sociais">
+      <a href="https://instagram.com/seuusuario" target="_blank" rel="noopener" title="Instagram">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
+      </a>
+      <a href="https://wa.me/5511999999999" target="_blank" rel="noopener" title="WhatsApp">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" />
+      </a>
+      <a href="mailto:contato@labrigabi.com" target="_blank" rel="noopener" title="E-mail">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg" alt="E-mail" />
+      </a>
+    </div>
+
+    <div class="sidebar-video">
+      <div class="anuncio">
+        <video src="./anuncio.mp4" autoplay loop muted playsinline aria-label="Vídeo de apresentação La Brigabi"></video>
+      </div>
+    </div>
+
+    <div class="sidebar-info">
+      <p><strong>Telefone:</strong> (11) 99999-9999</p>
+      <p><strong>E-mail:</strong> contato@labrigabi.com</p>
+      <p><strong>Endereço:</strong> Vila Matilde – São Paulo, SP</p>
+      <p><strong>Atendimento:</strong> Seg–Sáb · 9h às 19h</p>
+    </div>
+  </aside>
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <h2 id="hero-title">Doces artesanais feitos sob encomenda</h2>
+      <p>Desde 2023, criando bolos, doces e sobremesas com ingredientes selecionados, atendimento personalizado e entrega do jeitinho que você precisa.</p>
+      <div class="hero-cta">
+        <a class="btn cta" href="https://wa.me/5511999999999?text=Olá%20La%20Brigabi!%20Quero%20fazer%20uma%20encomenda." target="_blank" rel="noopener">Pedir pelo WhatsApp</a>
+        <a class="btn ghost" href="#produtos">Ver produtos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selo de diferenciais -->
+  <section class="features" aria-label="Diferenciais">
+    <div class="feature">
+      <span class="feature-ico" aria-hidden="true">🧁</span>
+      <h3>100% Artesanal</h3>
+      <p>Feitos à mão, com carinho em cada detalhe.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-ico" aria-hidden="true">📦</span>
+      <h3>Sob Encomenda</h3>
+      <p>Personalizamos sabores, tamanhos e acabamentos.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-ico" aria-hidden="true">🥛</span>
+      <h3>Ingredientes Selecionados</h3>
+      <p>Qualidade que dá para ver e provar.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-ico" aria-hidden="true">🤝</span>
+      <h3>Atendimento Próximo</h3>
+      <p>Profissionalismo e atenção do início à entrega.</p>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre" class="card">
+    <h2>Sobre Nós</h2>
+    <p>Fundada em 2023, nossa doceria artesanal nasceu com um propósito simples, mas muito especial: transformar momentos comuns em lembranças inesquecíveis. Localizados no coração da Vila Matilde, em São Paulo, dedicamo-nos a criar bolos, doces e sobremesas sob encomenda, sempre com ingredientes frescos, selecionados e preparados com o cuidado que você merece.</p>
+    <p>Cada receita que sai da nossa cozinha carrega não apenas sabor, mas também a essência de um trabalho feito com paixão e dedicação. Como empresa autônoma, valorizamos o atendimento próximo e personalizado, onde cada detalhe é pensado para refletir o seu gosto e tornar cada pedido verdadeiramente único.</p>
+    <p>Seja para um aniversário, um casamento, uma comemoração especial ou simplesmente para adoçar o seu dia, oferecemos produtos que unem beleza, sabor e qualidade. Do clássico ao criativo, nossas criações são feitas à mão, de forma artesanal, garantindo um toque caseiro que conquista à primeira mordida.</p>
+    <p>Mais do que vender doces, nossa missão é entregar felicidade. É por isso que colocamos profissionalismo e amor em cada etapa — da escolha dos ingredientes à finalização da entrega. Aqui, cada produto é mais do que um doce: é um pedaço da nossa história, feito especialmente para fazer parte da sua.</p>
+  </section>
+
+  <!-- Produtos -->
+  <section id="produtos">
+    <header class="section-head">
+      <h2>Produtos</h2>
+      <p>Explore nossa variedade de doces, bolos e sobremesas. Trabalhamos sob encomenda e ajustamos a receita ao seu gosto.</p>
+      <div class="filters" role="tablist" aria-label="Filtro de categorias">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+        <button class="filter-btn" data-filter="morango" role="tab">Morangos do Amor</button>
+        <button class="filter-btn" data-filter="doces" role="tab">Doces</button>
+        <button class="filter-btn" data-filter="ovos" role="tab">Ovos de Páscoa</button>
+        <button class="filter-btn" data-filter="bolos" role="tab">Bolos Artesanais</button>
+      </div>
     </header>
 
-<button class="sidebar-toggle" aria-label="Abrir menu lateral">
-    <span>&#9776;</span>
-</button>
-   <aside class="sidebar">
-    <div class="sidebar-logo">
-        <img src="./logo.jpg" alt="Logo La Brigabi" />
+    <div class="produtos-grid">
+      <!-- Morangos do Amor -->
+      <h3 class="category-title">Morangos do Amor</h3>
+      <div class="grid-list" data-category="morango">
+        <article class="produto-item" data-cat="morango">
+          <figure class="produto-zoom">
+            <div class="produto-foto">
+              <img src="./amor.jpg" loading="lazy" alt="Morangos do amor com cobertura de chocolate" />
+            </div>
+            <figcaption class="produto-legenda">Caixa com 6 – a partir de R$ 39</figcaption>
+          </figure>
+          <a class="btn mini" target="_blank" rel="noopener"
+             href="https://wa.me/5511999999999?text=Quero%20encomendar%20Morangos%20do%20Amor%20(6%20un).">Pedir no WhatsApp</a>
+        </article>
+
+        <article class="produto-item" data-cat="morango">
+          <figure class="produto-zoom">
+            <div class="produto-foto">
+              <img src="./morango-1.jpg" loading="lazy" alt="Morangos do amor decorados" />
+            </div>
+            <figcaption class="produto-legenda">Caixa com 12 – a partir de R$ 69</figcaption>
+          </figure>
+          <a class="btn mini" target="_blank" rel="noopener"
+             href="https://wa.me/5511999999999?text=Quero%20encomendar%20Morangos%20do%20Amor%20(12%20un).">Pedir no WhatsApp</a>
+        </article>
+
+        <article class="produto-item" data-cat="morango">
+          <figure class="produto-zoom">
+            <div class="produto-foto">
+              <img src="./morango-2.jpg" loading="lazy" alt="Morangos do amor com confeitos" />
+            </div>
+            <figcaption class="produto-legenda">Personalizado – sob consulta</figcaption>
+          </figure>
+          <a class="btn mini" target="_blank" rel="noopener"
+             href="https://wa.me/5511999999999?text=Quero%20um%20kit%20de%20Morangos%20do%20Amor%20personalizado.">Pedir no WhatsApp</a>
+        </article>
+      </div>
+
+      <!-- Doces -->
+      <h3 class="category-title">Doces</h3>
+      <div class="grid-list" data-category="doces">
+        <article class="produto-item" data-cat="doces">
+          <figure class="produto-zoom">
+            <div class="produto-foto">
+              <img src="./doce-1.jpg" loading="lazy" alt="Brigadeiros gourmet sortidos" />
+            </div>
+            <figcaption class="produto-legenda">Brigadeiros gourmet – a partir de R$ 120/kg</figcaption>
+          </figure>
+          <a class="btn mini" target="_blank" rel="noopener"
+             href="https://wa.me/5511999999999?text=Quero%20brigadeiros%20gourmet.">Pedir no WhatsApp</a>
+        </article>
+
+        <article class="produto-item" data-cat="doces">
+          <figure class="produto-zoom">
+            <div class="produto-foto">
+              <img src="./doce-2.jpg" loading="lazy" alt="Beijinhos tradicionais" />
+            </div>
+            <figcaption class="produto-legenda">Beijinhos – a partir de R$ 110/kg</figcaption>
+          </figure>
+          <a class="btn mini" target="_blank" rel="noopener"
+             href="https://wa.me/5511999999999?text=Quero%20beijinhos.">Pedir no WhatsApp</a>
+        </article>
+
+        <article class="produto-item" data-cat="doces">
+          <figure class="produto-zoom">
+            <div class="produto-foto">
+              <img src="./doce-3.jpg" loading="lazy" alt="Casadinhos com chocolate" />
+            </div>
+            <figcaption class="produto-legenda">Casadinhos – a partir de R$ 120/kg</figcaption>
+          </figure>
+          <a class="btn mini" target="_blank" rel="noopener"
+             href="https://wa.me/5511999999999?text=Quero%20casadinhos.">Pedir no WhatsApp</a>
+        </article>
+      </div>
+
+      <!-- Ovos de Páscoa -->
+      <h3 class="category-title">Ovos de Páscoa</h3>
+      <div class="grid-list" data-category="ovos">
+        <article class="produto-item" data-cat="ovos">
+          <figure class="produto-zoom">
+            <div class="produto-foto">
+              <img src="./ovo-1.jpg" loading="lazy" alt="Ovo de colher de brigadeiro" />
+            </div>
+            <figcaption class="produto-legenda">Ovo de colher – a partir de R$ 59</figcaption>
+          </figure>
+          <a class="btn mini" target="_blank" rel="noopener"
+             href="https://wa.me/5511999999999?text=Quero%20ovo%20de%20colher.">Pedir no WhatsApp</a>
+        </article>
+
+        <article class="produto-item" data-cat="ovos">
+          <figure class="produto-zoom">
+            <div class="produto-foto">
+              <img src="./ovo-2.jpg" loading="lazy" alt="Ovo recheado com confeitos" />
+            </div>
+            <figcaption class="produto-legenda">Recheado – a partir de R$ 69</figcaption>
+          </figure>
+          <a class="btn mini" target="_blank" rel="noopener"
+             href="https://wa.me/5511999999999?text=Quero%20ovo%20recheado.">Pedir no WhatsApp</a>
+        </article>
+
+        <article class="produto-item" data-cat="ovos">
+          <figure class="produto-zoom">
+            <div class="produto-foto">
+              <img src="./ovo-3.jpg" loading="lazy" alt="Ovo decorado premium" />
+            </div>
+            <figcaption class="produto-legenda">Premium – sob consulta</figcaption>
+          </figure>
+          <a class="btn mini" target="_blank" rel="noopener"
+             href="https://wa.me/5511999999999?text=Quero%20um%20ovo%20premium.">Pedir no WhatsApp</a>
+        </article>
+      </div>
+
+      <!-- Bolos -->
+      <h3 class="category-title">Bolos Artesanais</h3>
+      <div class="grid-list" data-category="bolos">
+        <article class="produto-item" data-cat="bolos">
+          <figure class="produto-zoom">
+            <div class="produto-foto">
+              <img src="./bolo-1.jpg" loading="lazy" alt="Bolo de chocolate com morangos" />
+            </div>
+            <figcaption class="produto-legenda">Bolo de chocolate – a partir de R$ 89</figcaption>
+          </figure>
+          <a class="btn mini" target="_blank" rel="noopener"
+             href="https://wa.me/5511999999999?text=Quero%20um%20bolo%20de%20chocolate.">Pedir no WhatsApp</a>
+        </article>
+
+        <article class="produto-item" data-cat="bolos">
+          <figure class="produto-zoom">
+            <div class="produto-foto">
+              <img src="./bolo-2.jpg" loading="lazy" alt="Bolo de chantilly decorado" />
+            </div>
+            <figcaption class="produto-legenda">Bolo decorado – a partir de R$ 119</figcaption>
+          </figure>
+          <a class="btn mini" target="_blank" rel="noopener"
+             href="https://wa.me/5511999999999?text=Quero%20um%20bolo%20decorado.">Pedir no WhatsApp</a>
+        </article>
+
+        <article class="produto-item" data-cat="bolos">
+          <figure class="produto-zoom">
+            <div class="produto-foto">
+              <img src="./bolo-3.jpg" loading="lazy" alt="Bolo naked cake com frutas" />
+            </div>
+            <figcaption class="produto-legenda">Naked cake – sob consulta</figcaption>
+          </figure>
+          <a class="btn mini" target="_blank" rel="noopener"
+             href="https://wa.me/5511999999999?text=Quero%20um%20naked%20cake.">Pedir no WhatsApp</a>
+        </article>
+      </div>
     </div>
-    <div class="sidebar-social">
-        <a href="https://instagram.com/seuusuario" target="_blank" title="Instagram">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
-        </a>
-        <a href="https://wa.me/5599999999999" target="_blank" title="WhatsApp">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" />
-        </a>
-        <a href="mailto:contato@labrigabi.com" target="_blank" title="E-mail">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/maildotru.svg" alt="E-mail" />
-        </a>
+
+    <div class="section-cta">
+      <a class="btn cta" href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20fazer%20uma%20encomenda." target="_blank" rel="noopener">Fazer encomenda agora</a>
     </div>
-    <div class="sidebar-video">
-    <div class="anuncio">
-        <video src="./anuncio.mp4" autoplay loop muted playsinline></video>
+  </section>
+
+  <!-- Depoimentos -->
+  <section id="depoimentos" class="testimonials card">
+    <h2>O que dizem nossos clientes</h2>
+    <div class="testi-list">
+      <blockquote class="testi">
+        <p>“Os morangos do amor foram o sucesso da festa! Entrega pontual e capricho impecável.”</p>
+        <cite>— Vanessa, Vila Matilde</cite>
+      </blockquote>
+      <blockquote class="testi">
+        <p>“Bolo delicioso e lindo! Atendimento super atencioso do começo ao fim.”</p>
+        <cite>— Rafael, Penha</cite>
+      </blockquote>
+      <blockquote class="testi">
+        <p>“Doces artesanais de verdade. Dá para sentir a qualidade em cada mordida.”</p>
+        <cite>— Bianca, Tatuapé</cite>
+      </blockquote>
     </div>
-</div>
-    <div class="sidebar-info">
-        <p><strong>Telefone:</strong> (99) 99999-9999</p>
-        <p><strong>E-mail:</strong> contato@labrigabi.com</p>
-        <p><strong>Endereço:</strong> Rua dos Doces, 123<br>Doceville - BR</p>
+  </section>
+
+  <!-- Encomendas -->
+  <section id="encomendas" class="card">
+    <h2>Encomendas</h2>
+    <p>Faça sua encomenda personalizada e surpreenda a todos com nossos deliciosos produtos. Responderemos o quanto antes.</p>
+
+    <form class="order-form" action="#" method="post" autocomplete="on" novalidate>
+      <div class="form-row">
+        <label for="nome">Seu nome</label>
+        <input id="nome" name="nome" type="text" required placeholder="Seu nome completo" />
+      </div>
+
+      <div class="form-row">
+        <label for="email">Seu e-mail</label>
+        <input id="email" name="email" type="email" required placeholder="voce@email.com" />
+      </div>
+
+      <div class="form-row">
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte o que você quer encomendar (data, sabor, tamanho...)"></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn cta">Enviar pedido</button>
+        <a class="btn ghost" target="_blank" rel="noopener"
+           href="https://wa.me/5511999999999?text=Olá!%20Quero%20fazer%20uma%20encomenda.">Falar no WhatsApp</a>
+      </div>
+    </form>
+  </section>
+
+  <!-- CTA faixa -->
+  <section class="cta-strip" aria-label="Chamada para ação">
+    <p>Pronto para adoçar o seu momento?</p>
+    <a class="btn light" href="https://wa.me/5511999999999?text=Olá!%20Quero%20um%20orçamento." target="_blank" rel="noopener">Pedir orçamento</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h4>La Brigabi</h4>
+        <p>Doceria artesanal na Vila Matilde, SP. Bolos, doces e sobremesas sob encomenda desde 2023.</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="mailto:contato@labrigabi.com">contato@labrigabi.com</a></li>
+          <li><a href="https://wa.me/5511999999999" target="_blank" rel="noopener">(11) 99999-9999</a></li>
+          <li>Vila Matilde – São Paulo, SP</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#encomendas">Encomendas</a></li>
+        </ul>
+      </div>
     </div>
-    <button class="sidebar-close" aria-label="Fechar menu lateral">&times;</button>
-</aside>
-    <div class="sidebar-overlay"></div>
+    <p class="copy">&copy; 2025 La Brigabi. Todos os direitos reservados.</p>
+  </footer>
 
-
-    <section id="sobre">
-        <h2>Sobre Nós</h2>
-        <p>Somos uma empresa independente de doceria e confeitaria, dedicada a criar doces e sobremesas que encantam o
-            paladar. Nossa missão é proporcionar momentos de felicidade através de nossos produtos artesanais e de alta
-            qualidade.</p>
-    </section>
-
-    <section id="produtos">
-        <h2>Produtos</h2>
-        <p>Explore nossa variedade de doces, bolos e sobremesas, todos feitos com ingredientes frescos e de alta
-            qualidade. Temos opções para todas as ocasiões!</p>
-        <div class="produtos-grid">
-             <h1>Morangos do Amor</h1>
-            <div class="morango">
-            <div class="produto-zoom">
-                <figure class="produto-item">
-                    <div class="produto-foto"><img src="./amor.jpg" alt="amor1"></div>
-                    <figcaption class="produto-legenda">Legenda 1</figcaption>
-                </figure>
-            </div>
-            <div class="produto-zoom">
-                <figure class="produto-item">
-                    <div class="produto-foto"><img src="./amor.jpg" alt="amor2"></div>
-                    <figcaption class="produto-legenda">Legenda 2</figcaption>
-                </figure>
-            </div>
-            <div class="produto-zoom">
-                <figure class="produto-item">
-                    <div class="produto-foto"><img src="./amor.jpg" alt="amor3"></div>
-                    <figcaption class="produto-legenda">Legenda 3</figcaption>
-                </figure>
-            </div>
-            </div>
-              <h1>Ovos de Páscoa</h1>
-            <div class="ovo">
-            <div class="produto-zoom">
-                <figure class="produto-item">
-                    <div class="produto-foto"><img src="./ovo.webp" alt="ovo1"></div>
-                    <figcaption class="produto-legenda">Legenda 4</figcaption>
-                </figure>
-            </div>
-            <div class="produto-zoom">
-                <figure class="produto-item">
-                    <div class="produto-foto"><img src="./ovo.webp" alt="ovo2"></div>
-                    <figcaption class="produto-legenda">Legenda 5</figcaption>
-                </figure>
-            </div>
-            <div class="produto-zoom">
-                <figure class="produto-item">
-                    <div class="produto-foto"><img src="./ovo.webp" alt="ovo3"></div>
-                    <figcaption class="produto-legenda">Legenda 6</figcaption>
-                </figure>
-            </div>
-            </div>
-            <h1>Bolos Artesanais</h1>
-            <div class="bolos">
-            <div class="produto-zoom">
-                <figure class="produto-item">
-                    <div class="produto-foto"><img src="./bolo.jpg" alt="bolo1"></div>
-                    <figcaption class="produto-legenda">Legenda 7</figcaption>
-                </figure>
-            </div>
-            <div class="produto-zoom">
-                <figure class="produto-item">
-                    <div class="produto-foto"><img src="./bolo.jpg" alt="bolo2"></div>
-                    <figcaption class="produto-legenda">Legenda 8</figcaption>
-                </figure>
-            </div>
-            <div class="produto-zoom">
-                <figure class="produto-item">
-                    <div class="produto-foto"><img src="./bolo.jpg" alt="bolo3"></div>
-                    <figcaption class="produto-legenda">Legenda 9</figcaption>
-                </figure>
-            </div>
-            <div class="produto-zoom">
-                <figure class="produto-item">
-                    <div class="produto-foto"><img src="./bolo.jpg" alt="bolo4"></div>
-                    <figcaption class="produto-legenda">Legenda 10</figcaption>
-                </figure>
-            </div>
-            <div class="produto-zoom">
-                <figure class="produto-item">
-                    <div class="produto-foto"><img src="./bolo.jpg" alt="bolo5"></div>
-                    <figcaption class="produto-legenda">Legenda 11</figcaption>
-                </figure>
-            </div>
-            <div class="produto-zoom">
-                <figure class="produto-item">
-                    <div class="produto-foto"><img src="./bolo.jpg" alt="bolo6"></div>
-                    <figcaption class="produto-legenda">Legenda 12</figcaption>
-                </figure>
-            </div>
-            <div class="produto-zoom">
-                <figure class="produto-item">
-                    <div class="produto-foto"><img src="./bolo.jpg" alt="bolo7"></div>
-                    <figcaption class="produto-legenda">Legenda 13</figcaption>
-                </figure>
-            </div>
-            <div class="produto-zoom">
-                <figure class="produto-item">
-                    <div class="produto-foto"><img src="./bolo.jpg" alt="bolo8"></div>
-                    <figcaption class="produto-legenda">Legenda 14</figcaption>
-                </figure>
-            </div>
-            <div class="produto-zoom">
-                <figure class="produto-item">
-                    <div class="produto-foto"><img src="./bolo.jpg" alt="bolo9"></div>
-                    <figcaption class="produto-legenda">Legenda 15</figcaption>
-                </figure>
-            </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="encomendas">
-        <h2>Encomendas</h2>
-        <h1>Faça sua encomenda personalizada e surpreenda a todos com nossos deliciosos produtos. Entre em contato
-            conosco para mais informações.</h1>
-        <form>
-            <input type="text" placeholder="Seu nome" required>
-            <input type="email" placeholder="Seu e-mail" required>
-            <textarea placeholder="Sua mensagem" rows="4"></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 La Brigabi. Todos os direitos reservados.</p>
-    </footer>
-    <script src="./script.js"></script>
+  <script src="./script.js"></script>
 </body>
-
 </html>
