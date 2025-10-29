@@ -4,10 +4,12 @@
 :root, :root[data-theme='dark'] {
   --primary-color: #F0F0F0;
 
-  --primary-bg-color: #111217;
-  --secondary-bg-color: #28292E;
-  --primary-border-color: #28292E;
-	--secondary-border-color: #56575A;
+  --primary-bg-color: #18141F;
+  --secondary-bg-color: #3D2352;
+  --primary-border-color: #3D2352;
+  --secondary-border-color: #6B4F8A;
+
+
 
   --title-color: #F0F0F0;
   --text-color: #9A9A9C;
@@ -18,15 +20,15 @@
 :root[data-theme='light'] {
   --primary-color: #0B0B0F;
 
-	--primary-bg-color: #E9E9E9;
-	--secondary-bg-color: #C7C8C9;
-	--primary-border-color: #C7C8C9;
-	--secondary-border-color: #9A9A9C;
+  --primary-bg-color: #E9E9E9;
+  --secondary-bg-color: #D6CDEA; /* Lilás suave */
+  --primary-border-color: #D6CDEA;
+  --secondary-border-color: #B9A9D0; /* Lilás médio para contraste */
 
-	--title-color: #0B0B0F;
-	--text-color: #28292E;
-	--link-color: #28292E;
-	--icon-color: #56575A;
+  --title-color: #0B0B0F;
+  --text-color: #28292E;
+  --link-color: #28292E;
+  --icon-color: #56575A;
 }
 
 html[data-theme='light'] .brand__logo {
