@@ -706,8 +706,8 @@ footer p {
   width: 100%;
   padding: 0.9rem 1rem;
   border-radius: 8px;
-  border: 1px solid var(--border-color);
-  background-color: var(--bg-secondary);
+  border: 1px solid var(--primary-border-color);
+  background-color: var(--secondary-bg-color);
   color: var(--text-color);
   font-size: 1rem;
   font-family: inherit;
@@ -716,7 +716,7 @@ footer p {
 
 .contact__form input::placeholder,
 .contact__form textarea::placeholder {
-  color: var(--text-muted);
+  color: var(--text-color);
 }
 
 .contact__form input:focus,
@@ -763,6 +763,7 @@ footer p {
   color: #ef4444;
 }
 
+/* ================= PÁGINA OBRIGADO ================= */
 
 body.obrigado {
   margin: 0;
@@ -770,9 +771,8 @@ body.obrigado {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-primary);
+  background: var(--primary-bg-color);
   color: var(--text-color);
-  font-family: inherit;
 }
 
 .obrigado__card {
@@ -781,9 +781,9 @@ body.obrigado {
   padding: 3rem 2rem;
   text-align: center;
   border-radius: 14px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  background: var(--secondary-bg-color);
+  border: 1px solid var(--primary-border-color);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   animation: fadeIn 0.4s ease-in-out;
 }
 
@@ -793,14 +793,15 @@ body.obrigado {
 }
 
 .obrigado__title {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 2rem;
   margin-bottom: 0.8rem;
+  color: var(--title-color);
+  letter-spacing: normal;
 }
 
 .obrigado__text {
   font-size: 1rem;
-  color: var(--text-muted);
+  color: var(--text-color);
   margin-bottom: 2rem;
   line-height: 1.6;
 }
@@ -808,15 +809,7 @@ body.obrigado {
 .obrigado__btn {
   display: inline-block;
   padding: 0.8rem 1.6rem;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: transform 0.15s ease, opacity 0.2s ease;
-}
-
-.obrigado__btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
+  border-radius: 50px;
 }
 
 /* animação suave */
