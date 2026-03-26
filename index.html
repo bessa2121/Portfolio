@@ -365,21 +365,26 @@
     diretamente pelo formulário abaixo.
   </p>
 
-  <form data-form
-        action="https://formsubmit.co/dxrktavares3@gmail.com"
-        method="POST"
-        class="contact__form">
+  <form
+    action="https://formsubmit.co/dxrktavares3@gmail.com"
+    method="POST"
+    class="contact__form"
+  >
 
-    <!-- Config FormSubmit -->
+    <!-- Configuração FormSubmit -->
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_subject" value="Nova mensagem do seu Portfólio">
     <input type="hidden" name="_template" value="box">
+    <input type="hidden" name="_next" value="https://SEUSITE.com/obrigado.html">
 
-    <input type="text" name="nome" placeholder="Seu nome" required>
-    <input type="email" name="email" placeholder="Seu e-mail" required>
-    <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+    <!-- Honeypot anti-spam -->
+    <input type="text" name="_honey" style="display:none">
 
-    <button type="submit" data-button class="btn btn--primary">
+    <input type="text" name="Nome" placeholder="Seu nome" required>
+    <input type="email" name="Email" placeholder="Seu e-mail" required>
+    <textarea name="Mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+
+    <button type="submit" class="btn btn--primary">
       Enviar mensagem
     </button>
   </form>
