@@ -39,7 +39,6 @@ Criar um portfólio que não fosse apenas visual, mas que **comprovasse na prát
 - HTML5
 - CSS3
 - JavaScript
-- Bootstrap Icons
 
 ---
 
