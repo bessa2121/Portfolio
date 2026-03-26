@@ -358,37 +358,53 @@
         </div>
   </section>
   
-  <section id="contato" class="contact">
-    <h2>Contate-me</h2>
-    <p>Estou disponível para serviços e novas conexões. Contate-me via 
-      e-mail e conecte-se comigo através das minhas redes sociais.
-    </p>
-    <ul class="menu menu--social">
-      <li>
-        <a class="menu__link" href="https://github.com/bessa2121" target="_blank">
-          <i class="menu__icon bi bi-github"></i>
-          <span>GitHub</span>
-        </a>
-      </li>
-      <li>
-        <a class="menu__link" href="https://www.linkedin.com/in/davi-tavares-038b472a5/" target="_blank">
-          <i class="menu__icon bi bi-linkedin"></i>
-          <span>LinkedIn</span>
-        </a>
-      </li>
-      <li>
-        <a class="menu__link" href="https://www.instagram.com/d.tavrs/" target="_blank">
-          <i class="menu__icon bi bi-instagram"></i>
-          <span>Instagram</span>
-        </a>
-      </li>
-    </ul>
-    <a href="mailto:dxrktavares3@gmail.com">
-      <button class="btn btn--primary">
-        <span class="email">dxrktavares3@gmail.com</span>
-      </button>  
-    </a>
-  </section>
+ <section id="contato" class="contact">
+  <h2>Contate-me</h2>
+  <p>
+    Estou disponível para serviços e novas conexões. Envie uma mensagem
+    diretamente pelo formulário abaixo.
+  </p>
+
+  <form data-form
+        action="https://formsubmit.co/dxrktavares3@gmail.com"
+        method="POST"
+        class="contact__form">
+
+    <!-- Config FormSubmit -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="Nova mensagem do seu Portfólio">
+    <input type="hidden" name="_template" value="box">
+
+    <input type="text" name="nome" placeholder="Seu nome" required>
+    <input type="email" name="email" placeholder="Seu e-mail" required>
+    <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+
+    <button type="submit" data-button class="btn btn--primary">
+      Enviar mensagem
+    </button>
+  </form>
+
+  <ul class="menu menu--social" style="margin-top:2rem;">
+    <li>
+      <a class="menu__link" href="https://github.com/bessa2121" target="_blank">
+        <i class="menu__icon bi bi-github"></i>
+        <span>GitHub</span>
+      </a>
+    </li>
+    <li>
+      <a class="menu__link" href="https://www.linkedin.com/in/davi-tavares-038b472a5/" target="_blank">
+        <i class="menu__icon bi bi-linkedin"></i>
+        <span>LinkedIn</span>
+      </a>
+    </li>
+    <li>
+      <a class="menu__link" href="https://www.instagram.com/d.tavrs/" target="_blank">
+        <i class="menu__icon bi bi-instagram"></i>
+        <span>Instagram</span>
+      </a>
+    </li>
+  </ul>
+</section>
 
   <footer>
     <p>
