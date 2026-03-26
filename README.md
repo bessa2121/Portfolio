@@ -1,19 +1,103 @@
-<h1>
-    <a href="https://www.dio.me/">
-     <img align="center" width="40px" src=""></a>
-    <span>Portfolio</span>
-</h1>
+# 👨‍💻 Portfólio — Davi Tavares Nascimento Bessa
 
-Repositório desenvolvido para fins profissionais.
-## Objetivo
-Buscar empregos na área.
+Portfólio profissional desenvolvido para apresentar meus projetos, habilidades técnicas e trajetória como **Desenvolvedor Back-End Java**.
 
-## Tecnologias
-[![JavaScript](https://img.shields.io/badge/JavaScript-000?style=for-the-badge&logo=javascript&logoColor=30A3DC)]()
-[![HTML5](https://img.shields.io/badge/HTML5-000?style=for-the-badge&logo=html5&logoColor=E94D5F)]() 
-[![CSS3](https://img.shields.io/badge/CSS3-000?style=for-the-badge&logo=css3&logoColor=30A3DC)]()
-[![Figma](https://img.shields.io/badge/Protótipo%20no%20Figma-000?style=for-the-badge&logo=figma&logoColor=E94D5F)](https://www.figma.com/file/NkndT2SbyHJZWLEsaM8Xn3/DIO-Lab-Portf%C3%B3lio)
+Este site funciona como minha vitrine técnica, reunindo:
 
+- Projetos reais com foco em arquitetura e APIs REST
+- Experiência com microsserviços, mensageria e Docker
+- Currículo interativo e exportável em PDF
+- Organização visual pensada para recrutadores e desenvolvedores
 
-##
-<div align="center">Feito com 💚 por <a href="https://github.com/bessa2121">Davi Tavares</a>.</div>
+🔗 **Acesse:** https://portfolio-flax-five-31.vercel.app/
+
+---
+
+## 🎯 Objetivo do Projeto
+
+Criar um portfólio que não fosse apenas visual, mas que **comprovasse na prática**:
+
+- Organização de código
+- Clareza de arquitetura
+- Domínio de tecnologias do ecossistema Java
+- Capacidade de estruturar projetos do início ao deploy
+
+---
+
+## 🧩 Seções do Portfólio
+
+- **Home** — Apresentação direta e foco em projetos
+- **Projetos** — Cards detalhando problema, solução e tecnologias
+- **Sobre mim** — Formação, idiomas e trajetória
+- **Currículo** — Página dedicada, estilizada e exportável em PDF
+- **Contato** — Acesso rápido às redes e e-mail
+
+---
+
+## 🚀 Tecnologias Utilizadas no Site
+
+- HTML5
+- CSS3
+- JavaScript
+- Bootstrap Icons
+
+---
+
+## 💼 Projetos em Destaque no Portfólio
+
+### 🏆 GameOnTech — 1º Lugar Hackathon Startline (Mileto)
+
+Portal de onboarding corporativo desenvolvido sob alta pressão competitiva.
+
+**Stack:** Java · Spring Boot · IA
+
+---
+
+### 🧱 Arquitetura de Microsserviços — Warehouse & Storefront
+
+Dois microsserviços se comunicando via REST e RabbitMQ, containerizados com Docker Compose.
+
+**Stack:** Java 17 · Spring Boot · RabbitMQ · Docker · PostgreSQL
+
+---
+
+### ♻️ ECOAI — Reconhecimento de Lixo com IA
+
+Sistema com reconhecimento de imagem, geolocalização e registro de descartes.
+
+**Stack:** Python · JS · HTML · CSS · Docker
+
+---
+
+## 🧠 O que este portfólio demonstra
+
+Este projeto mostra mais do que layout. Ele evidencia:
+
+- Capacidade de estruturar apresentação técnica
+- Clareza na comunicação de projetos
+- Organização visual orientada a recrutadores
+- Integração entre portfólio e currículo
+- Maturidade na exposição de habilidades
+
+---
+
+## 📄 Currículo Integrado
+
+O portfólio possui uma página exclusiva de currículo, com:
+
+- Hard Skills organizadas por área
+- Projetos descritos por problema e solução
+- Formação, bootcamps, certificações e eventos
+- Exportação direta para PDF
+
+---
+
+## 📫 Contato
+
+- GitHub: https://github.com/bessa2121
+- LinkedIn: https://linkedin.com/in/davi-tavares-038b472a5
+- Email: dxrktavares3@gmail.com
+
+---
+
+> “Código bom não é o que funciona. É o que continua funcionando quando o projeto cresce.”
