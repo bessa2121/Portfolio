@@ -3,420 +3,373 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Davi Tavares | Portfolio </title>
+  <title>Davi Tavares | Back-end Developer</title>
   <meta name="description" content="Portfólio do desenvolvedor back-end Davi Tavares para compartilhar projetos e habilidades desenvolvidas.">
-
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header class="header">
-    <nav class="header__nav">
-      <ul class="menu menu--principal">
-        <li class="menu__item">
-          <a class="menu__link active" href="#home">
-            <span class="menu__text">Home</span>
-          </a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link" href="#projetos">
-            <span class="menu__text">Projetos</span>
-          </a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link" href="#sobre">
-            <span class="menu__text">Sobre</span>
-          </a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link" href="#contato">
-            <span class="menu__text">Contato</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
     <div class="header__brand">
-      <a href="#home">
-        <img class="brand__logo" src="assets/images/logo.png" alt="Logo">
+      <a href="#home" class="brand__link">
+        <span class="brand__dot"></span>
+        <span class="brand__name">DT</span>
       </a>
     </div>
-    <div class="header__toggle">
-      <i id="toggleTheme" class="bi bi-sun"></i>
-    </div>
+    <nav class="header__nav">
+      <ul class="menu menu--principal">
+        <li class="menu__item"><a class="menu__link active" href="#home">Home</a></li>
+        <li class="menu__item"><a class="menu__link" href="#projetos">Projetos</a></li>
+        <li class="menu__item"><a class="menu__link" href="#sobre">Sobre</a></li>
+        <li class="menu__item"><a class="menu__link" href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <button id="toggleTheme" class="theme-toggle" aria-label="Alternar tema">
+      <i class="bi bi-sun"></i>
+    </button>
   </header>
+
+  <!-- MOBILE NAV -->
   <nav class="nav--mobile">
     <ul class="menu menu--mobile">
-      <li class="menu__item">
-        <a class="menu__link active" href="#home">
-          <i class="menu__icon bi bi-house-door"></i>
-          <span class="menu__text">Home</span>
-        </a>
-      </li>
-      <li class="menu__item">
-        <a class="menu__link" href="#projetos">
-          <i class="menu__icon bi bi-window-stack"></i>
-          <span class="menu__text">Projetos</span>
-        </a>
-      </li>
-      <li class="menu__item">
-        <a class="menu__link" href="#sobre">
-          <i class="menu__icon bi bi-person"></i>
-          <span class="menu__text">Sobre</span>
-        </a>
-      </li>
-      <li class="menu__item">
-        <a class="menu__link" href="#contato">
-          <i class="menu__icon bi bi-envelope"></i>
-          <span class="menu__text">Contato</span>
-        </a>
-      </li>
+      <li class="menu__item"><a class="menu__link active" href="#home"><i class="bi bi-house-door"></i><span>Home</span></a></li>
+      <li class="menu__item"><a class="menu__link" href="#projetos"><i class="bi bi-window-stack"></i><span>Projetos</span></a></li>
+      <li class="menu__item"><a class="menu__link" href="#sobre"><i class="bi bi-person"></i><span>Sobre</span></a></li>
+      <li class="menu__item"><a class="menu__link" href="#contato"><i class="bi bi-envelope"></i><span>Contato</span></a></li>
     </ul>
   </nav>
 
-  <main id="home">
-    <div class="main__content1">
-      <h1><b>Soluções Lógicas &</b> Desenvolvimento Back-end</h1>
-      <p>Davi Tavares, São Paulo-SP, Desenvolvedor Back-end.</p>
-      <ul class="menu menu--social">
-        <li>
-          <a class="menu__link" href="https://github.com/bessa2121" target="_blank">
-            <i class="menu__icon bi bi-github"></i>
-          </a>
-        </li>
-        <li>
-          <a class="menu__link" href="https://www.linkedin.com/in/davi-tavares-038b472a5/" target="_blank">
-            <i class="menu__icon bi bi-linkedin"></i>
-          </a>
-        </li>
-        <li>
-          <a class="menu__link" href="https://www.instagram.com/d.tavrs/" target="_blank">
-            <i class="menu__icon bi bi-instagram"></i>
-          </a>
-        </li>
-      </ul>
-      <a href="#projetos">
-        <button class="btn btn--primary">
+  <!-- HERO -->
+  <main id="home" class="hero">
+    <div class="hero__noise"></div>
+    <div class="hero__content">
+      <div class="hero__label">
+        <span class="label__dot"></span>
+        <span>Disponível para projetos</span>
+      </div>
+      <h1 class="hero__title">
+        <span class="hero__line">Soluções</span>
+        <span class="hero__line hero__line--accent">Lógicas &</span>
+        <span class="hero__line">Back-end</span>
+      </h1>
+      <p class="hero__sub">Davi Tavares — Desenvolvedor Back-end São Paulo, SP.</p>
+      <div class="hero__actions">
+        <a href="#projetos" class="btn btn--primary">
           <span>Ver Projetos</span>
           <i class="bi bi-arrow-down-right"></i>
-        </button>  
-      </a>
+        </a>
+        <ul class="social__list">
+          <li><a class="social__link" href="https://github.com/bessa2121" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a></li>
+          <li><a class="social__link" href="https://www.linkedin.com/in/davi-tavares-038b472a5/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
+          <li><a class="social__link" href="https://www.instagram.com/d.tavrs/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span>scroll</span>
+      <div class="scroll__line"></div>
     </div>
   </main>
 
+  <!-- TECHNOLOGIES -->
   <section class="technologies">
-    <h2>Conhecimento nas principais tecnologias do mercado</h2>
-    <ul class="technologies__list">
-      <li class="technologies__item">
-        <img class="technologies__logo" src="assets/images/technologies/Java.svg" alt="Logo Java">
-      </li>
-      <li class="technologies__item">
-        <img class="technologies__logo" src="assets/images/technologies/Docker.svg" alt="Logo Docker">
-      </li>
-      <li class="technologies__item">
-        <img class="technologies__logo" src="assets/images/technologies/MySQL.svg" alt="Logo MySQL">
-      </li>
-      <li class="technologies__item">
-        <img class="technologies__logo" src="assets/images/technologies/HTML.svg" alt="Logo HTML">
-      </li>
-      <li class="technologies__item">
-        <img class="technologies__logo" src="assets/images/technologies/CSS.svg" alt="Logo CSS">
-      </li>
-    </ul>
+    <div class="technologies__inner">
+      <p class="tech__label">Stack principal</p>
+      <ul class="technologies__list">
+        <li class="technologies__item">
+          <img class="technologies__logo" src="assets/images/technologies/Java.svg" alt="Java">
+          <span>Java</span>
+        </li>
+        <li class="technologies__item">
+          <img class="technologies__logo" src="assets/images/technologies/Docker.svg" alt="Docker">
+          <span>Docker</span>
+        </li>
+        <li class="technologies__item">
+          <img class="technologies__logo" src="assets/images/technologies/MySQL.svg" alt="MySQL">
+          <span>MySQL</span>
+        </li>
+        <li class="technologies__item">
+          <img class="technologies__logo" src="assets/images/technologies/HTML.svg" alt="HTML">
+          <span>HTML</span>
+        </li>
+        <li class="technologies__item">
+          <img class="technologies__logo" src="assets/images/technologies/CSS.svg" alt="CSS">
+          <span>CSS</span>
+        </li>
+      </ul>
+    </div>
   </section>
 
+  <!-- PROJECTS -->
   <section id="projetos" class="projects">
-    <h2>Projetos</h2>
-    <div class="projects__container">
-      <div class="projects__card">
-        <img class="card__cover" src="assets/images/projects/ExpoCuca_PC.png" alt="ExpoCuca_PC">
-        <div class="card__body">
-          <h3 class="card__title">ExpoCuca</h3>
-          <p class="card__description">Escape Run Pac-Man</p>
-          <ul class="card__list">
-            <li class="card__item">Adição de pontos</li>
-            <li class="card__item">Tabela de Ranking</li>
-            <li class="card__item">Login para Admins</li>
-          </ul>
-          <ul class="technologies__list">
-            <li class="technologies__item">
-              <img class="technologies__logo" src="assets/images/technologies/PHP.svg" alt="Logo PHP">
-            </li>
-            <li class="technologies__item">
-              <img class="technologies__logo" src="assets/images/technologies/JS.svg" alt="Logo JavaScript">
-            </li>
-            <li class="technologies__item">
-              <img class="technologies__logo" src="assets/images/technologies/CSS.svg" alt="Logo CSS">
-            </li>
-          </ul>
-          <div class="card__buttons">
-            <a href="https://github.com/bessa2121/PACMAN.git">
-            <button class="btn btn--primary">
-              <span>Prévia</span>
+    <div class="section__header">
+      <span class="section__num">02</span>
+      <h2>Projetos</h2>
+    </div>
+
+    <div class="projects__grid">
+
+      <!-- Card 1 -->
+      <article class="project__card">
+        <div class="project__image-wrap">
+          <img class="project__image" src="assets/images/projects/ExpoCuca_PC.png" alt="ExpoCuca">
+          <div class="project__overlay">
+            <a href="https://github.com/bessa2121/PACMAN.git" class="overlay__btn" target="_blank">
               <i class="bi bi-arrow-up-right"></i>
-            </button> 
-           </a>
-           <a href="https://github.com/bessa2121/PACMAN.git">
-            <button class="btn">
-              <span>Repositório</span>
-            </button>  
-          </a>
-          </div>
-        </div>
-      </div>
-      <div class="projects__card card--reverse">
-        <img class="card__cover" src="assets/images/projects/Microservicos_PC.png" alt="Microserviços_PC">
-        <div class="card__body">
-          <h3 class="card__title">Warehouse e Storefront</h3>
-          <p class="card__description">Microsserviços com Spring Boot</p>
-          <ul class="card__list">
-            <li class="card__item">O serviço Storefront consome endpoints REST do Warehouse.</li>
-            <li class="card__item">Eventos como atualização de estoque são enviados via mensageria.</li>
-            <li class="card__item">Possibilidade de Controle de Produtos & SOLID</li>
-          </ul>
-          <ul class="technologies__list">
-            <li class="technologies__item">
-              <img class="technologies__logo" src="assets/images/technologies/Java.svg" alt="Logo Java">
-            </li>
-            <li class="technologies__item">
-              <img class="technologies__logo" src="assets/images/technologies/Docker.svg" alt="Logo Docker">
-            </li>
-            <li class="technologies__item">
-              <img class="technologies__logo" src="assets/images/technologies/MySQL.svg" alt="Logo MySQL">
-            </li>
-          </ul>
-          <div class="card__buttons">
-            <a href="https://github.com/bessa2121/Microservi-os_DIO.git">
-            <button class="btn btn--primary">
-              <span>Prévia</span>
-              <i class="bi bi-arrow-up-right"></i>
-            </button>  
-          </a>
-          <a href="https://github.com/bessa2121/Microservi-os_DIO.git">
-            <button class="btn">
-              <span>Repositório</span>
-            </button>  
-          </a>
-          </div>
-        </div>
-      </div>
-      <div class="projects__card">
-        <img class="card__cover" src="assets/images/projects/ECOAI_PC.png" alt="ECOAI_PC">
-        <div class="card__body">
-          <h3 class="card__title">ECOAI</h3>
-          <p class="card__description">IA de Reconhecimento de Lixo</p>
-          <ul class="card__list">
-            <li class="card__item">Reconhece o Lixo / Solicita Coletas</li>
-            <li class="card__item">Geolocalização em Tempo Real com API do Google Maps</li>
-            <li class="card__item">Registro/Histórico de Descartes</li>
-          </ul>
-          <ul class="technologies__list">
-            <li class="technologies__item">
-              <img class="technologies__logo" src="assets/images/technologies/Python.svg" alt="Logo Python">
-            </li>
-            <li class="technologies__item">
-              <img class="technologies__logo" src="assets/images/technologies/HTML.svg" alt="Logo HTML">
-            </li>
-            <li class="technologies__item">
-              <img class="technologies__logo" src="assets/images/technologies/CSS.svg" alt="Logo CSS">
-            </li>
-            <li class="technologies__item">
-              <img class="technologies__logo" src="assets/images/technologies/JS.svg" alt="Logo JS">
-            </li>
-            <li class="technologies__item">
-              <img class="technologies__logo" src="assets/images/technologies/Docker.svg" alt="Logo Docker">
-            </li>
-          </ul>
-          <div class="card__buttons">
-            <a href="https://github.com/bessa2121/eco-ia-projeto.git">
-            <button class="btn btn--primary">
-              <span>Prévia</span>
-              <i class="bi bi-arrow-up-right"></i>
-            </button>  
-            </a>
-            <a href="https://github.com/bessa2121/eco-ia-projeto.git">
-            <button class="btn">
-              <span>Repositório</span>
-            </button>  
             </a>
           </div>
         </div>
-      </div>
-      <a href="https://github.com/bessa2121">
-        <button class="btn btn--primary">
-          <span>Ver Todos os Projetos</span>
-          <i class="bi bi-arrow-up-right"></i>
-        </button>  
+        <div class="project__body">
+          <div class="project__meta">
+            <span class="project__num">01</span>
+            <ul class="project__tags">
+              <li>PHP</li><li>JavaScript</li><li>CSS</li>
+            </ul>
+          </div>
+          <h3 class="project__title">ExpoCuca</h3>
+          <p class="project__desc">Escape Run Pac-Man com sistema de pontuação, ranking e painel de admin.</p>
+          <ul class="project__features">
+            <li>Adição de pontos em tempo real</li>
+            <li>Tabela de Ranking dinâmica</li>
+            <li>Login para Admins</li>
+          </ul>
+          <div class="project__links">
+            <a href="https://github.com/bessa2121/PACMAN.git" class="btn btn--primary" target="_blank">
+              <span>Prévia</span><i class="bi bi-arrow-up-right"></i>
+            </a>
+            <a href="https://github.com/bessa2121/PACMAN.git" class="btn btn--ghost" target="_blank">
+              <i class="bi bi-github"></i><span>Repositório</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="project__card project__card--alt">
+        <div class="project__image-wrap">
+          <img class="project__image" src="assets/images/projects/Microservicos_PC.png" alt="Warehouse e Storefront">
+          <div class="project__overlay">
+            <a href="https://github.com/bessa2121/Microservi-os_DIO.git" class="overlay__btn" target="_blank">
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="project__body">
+          <div class="project__meta">
+            <span class="project__num">02</span>
+            <ul class="project__tags">
+              <li>Java</li><li>Docker</li><li>MySQL</li>
+            </ul>
+          </div>
+          <h3 class="project__title">Warehouse & Storefront</h3>
+          <p class="project__desc">Arquitetura de microsserviços com Spring Boot e mensageria assíncrona.</p>
+          <ul class="project__features">
+            <li>REST API entre serviços</li>
+            <li>Eventos via mensageria de estoque</li>
+            <li>Controle de Produtos & SOLID</li>
+          </ul>
+          <div class="project__links">
+            <a href="https://github.com/bessa2121/Microservi-os_DIO.git" class="btn btn--primary" target="_blank">
+              <span>Prévia</span><i class="bi bi-arrow-up-right"></i>
+            </a>
+            <a href="https://github.com/bessa2121/Microservi-os_DIO.git" class="btn btn--ghost" target="_blank">
+              <i class="bi bi-github"></i><span>Repositório</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="project__card">
+        <div class="project__image-wrap">
+          <img class="project__image" src="assets/images/projects/ECOAI_PC.png" alt="ECOAI">
+          <div class="project__overlay">
+            <a href="https://github.com/bessa2121/eco-ia-projeto.git" class="overlay__btn" target="_blank">
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="project__body">
+          <div class="project__meta">
+            <span class="project__num">03</span>
+            <ul class="project__tags">
+              <li>Python</li><li>HTML</li><li>Docker</li>
+            </ul>
+          </div>
+          <h3 class="project__title">ECOAI</h3>
+          <p class="project__desc">IA de reconhecimento e coleta de lixo com geolocalização em tempo real.</p>
+          <ul class="project__features">
+            <li>Reconhecimento de resíduos por IA</li>
+            <li>Google Maps API integrada</li>
+            <li>Histórico de descartes</li>
+          </ul>
+          <div class="project__links">
+            <a href="https://github.com/bessa2121/eco-ia-projeto.git" class="btn btn--primary" target="_blank">
+              <span>Prévia</span><i class="bi bi-arrow-up-right"></i>
+            </a>
+            <a href="https://github.com/bessa2121/eco-ia-projeto.git" class="btn btn--ghost" target="_blank">
+              <i class="bi bi-github"></i><span>Repositório</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="projects__cta">
+      <a href="https://github.com/bessa2121" class="btn btn--primary" target="_blank">
+        <span>Ver todos no GitHub</span>
+        <i class="bi bi-arrow-up-right"></i>
       </a>
     </div>
   </section>
 
+  <!-- SOBRE -->
   <section id="sobre" class="about">
-    <div class="about__content1">
-      <img class="about__photo" src="assets/images/perfil_photo.jpg" alt="perfil">
-      <div class="about__description">
-        <h2>Sobre mim</h2>
-        <hr>
-        <p>Davi Tavares. Apaixonado por esportes e tecnologia, meu primeiro "Hello World" foi a 1 ano atrás quando tive contato com HTML, CSS e Portugol. Atualmente curso Desenvolvimento de Sistemas na ETEC Prof. Camargo Aranha.
-        </p>  
-        <div class="about__icons">
+    <div class="section__header">
+      <span class="section__num">03</span>
+      <h2>Sobre</h2>
+    </div>
+
+    <div class="about__grid">
+      <div class="about__photo-wrap">
+        <img class="about__photo" src="assets/images/perfil_photo.jpg" alt="Davi Tavares">
+        <div class="about__photo-deco"></div>
+      </div>
+
+      <div class="about__info">
+        <p class="about__text">
+          Apaixonado por esportes e tecnologia. Meu primeiro "Hello World" foi há 1 ano, quando tive contato com HTML, CSS e Portugol. Atualmente curso Desenvolvimento de Sistemas na <strong>ETEC Prof. Camargo Aranha</strong>.
+        </p>
+        <div class="about__badge">
           <i class="bi bi-translate"></i>
-          <span>Inglês: Avançado | Espanhol: Básico</span>
+          <span>Inglês Avançado &nbsp;·&nbsp; Espanhol Básico</span>
         </div>
-        <div class="description__buttons">
-          <a href="https://www.linkedin.com/in/davi-tavares-038b472a5/" target="_blank">
-            <button class="btn btn--primary">
-              <span>Conecte-se Comigo</span>
-              <i class="bi bi-arrow-up-right"></i>
-            </button> 
+        <div class="about__actions">
+          <a href="https://www.linkedin.com/in/davi-tavares-038b472a5/" class="btn btn--primary" target="_blank">
+            <span>Conecte-se</span><i class="bi bi-arrow-up-right"></i>
           </a>
-          <a href="/curriculo.html">
-            <button class="btn">
-              <span>Currículo</span>
-            </button>
+          <a href="/curriculo.html" class="btn btn--ghost">
+            <span>Currículo</span>
           </a>
         </div>
       </div>
     </div>
-    <div class="about__content2">
-      <div class="col1">
-        <div class="row1">
-          <h3>Formação</h3>
+
+    <div class="about__details">
+      <!-- Formação -->
+      <div class="detail__block">
+        <h3 class="detail__title"><i class="bi bi-mortarboard"></i> Formação</h3>
+        <div class="detail__card">
+          <span class="detail__period">2024 — Atualmente</span>
           <h4>Desenvolvimento de Sistemas</h4>
-          <span>2024 - Atualmente</span>
-          <div class="about__icons">
-            <i class="bi bi-bank"></i>
-            <span>ETEC Prof. Camargo Aranha</span>
-          </div>
-          <div class="about__icons">
-            <i class="bi bi-geo-alt"></i>
-            <span>São Paulo, SP</span>
-          </div>
-        </div>
-        <div class="row2">
-          <h3>Experiências</h3>
-          <h4>--------------</h4>
-          <span>-------------- -------------- - --------------</span>
-          <span>-------------- -------------- -------------- -------------- -------------- 
-            -------------- -------------- -------------- -------------- -------------- ---------------
-          </span>
-          <ul class="about__list">
-            <li class="about__item">--------------</li>
-            <li class="about__item">--------------------</li>
-            <li class="about__item">----------------------------</li>
-          </ul>
+          <p><i class="bi bi-bank"></i> ETEC Prof. Camargo Aranha &nbsp;·&nbsp; São Paulo, SP</p>
         </div>
       </div>
-      <div class="col2">
-        <h3>Cursos</h3>
+
+      <!-- Cursos -->
+      <div class="detail__block">
+        <h3 class="detail__title"><i class="bi bi-journal-bookmark"></i> Cursos</h3>
         <div id="accordion">
           <div class="accordion__item active">
-            <button class="accordion__header start">
-              <span>Versionamento de Código com Git e GitHub</span>
-              <i class="bi bi-caret-down-fill"></i>
+            <button class="accordion__header">
+              <span>Versionamento com Git e GitHub</span>
+              <i class="bi bi-plus-lg"></i>
             </button>
             <div class="accordion__body">
-              <p>
-                Digital Innovation One. Fev 2023. 2h.
-              </p>
-              <p>
-                O que é versionamento de código, Git e GitHub. Como instalar e configurar o Git em diferentes sistemas 
-                operacionais e como autenticar via Token e SSH. Como manusear repositórios, indo desde a criação e clonagem 
-                até o gerenciamento de branches, passando por todas as etapas de salvar, desfazer e sincronizar alterações 
-                com o repositório remoto. 
-              </p>
+              <p><strong>Digital Innovation One</strong> · Fev 2023 · 2h</p>
+              <p>Versionamento, instalação, autenticação, repositórios, branches, desfazer e sincronizar alterações.</p>
             </div>
           </div>
           <div class="accordion__item">
             <button class="accordion__header">
-              <span>Contribuindo em um Projeto Open Source no GitHub</span>
-              <i class="bi bi-caret-down-fill"></i>
+              <span>Contribuindo em Open Source no GitHub</span>
+              <i class="bi bi-plus-lg"></i>
             </button>
             <div class="accordion__body">
-              <p>
-                Digital Innovation One. Fev 2023. 1h.
-              </p>
-              <p>
-                Lab prático sobre colaboração em projetos de código aberto.
-              </p>
+              <p><strong>Digital Innovation One</strong> · Fev 2023 · 1h</p>
+              <p>Lab prático sobre colaboração em projetos de código aberto.</p>
             </div>
           </div>
           <div class="accordion__item">
-            <button class="accordion__header end">
-              <span>Organizando seus Estudos com os Roadmaps DIO e o Notion</span>
-              <i class="bi bi-caret-down-fill"></i>
+            <button class="accordion__header">
+              <span>Estudos com Roadmaps DIO e Notion</span>
+              <i class="bi bi-plus-lg"></i>
             </button>
-            <div class="accordion__body end">
-              <p>
-                Digital Innovation One. Fev 2023. 2h.
-              </p>
-              <p>
-                Otimização dos estudos com os Roadmaps DIO, construindo um caderno de estudos com a ferramenta Notion.
-              </p>
+            <div class="accordion__body">
+              <p><strong>Digital Innovation One</strong> · Fev 2023 · 2h</p>
+              <p>Otimização dos estudos com Roadmaps DIO e caderno no Notion.</p>
             </div>
           </div>
         </div>
+      </div>
+    </div>
   </section>
-  
- <section id="contato" class="contact">
-  <h2>Contate-me</h2>
-  <p>
-    Estou disponível para serviços e novas conexões. Envie uma mensagem
-    diretamente pelo formulário abaixo.
-  </p>
 
-  <form
-    action="https://formsubmit.co/dxrktavares3@gmail.com"
-    method="POST"
-    class="contact__form"
-  >
+  <!-- CONTATO -->
+  <section id="contato" class="contact">
+    <div class="section__header">
+      <span class="section__num">04</span>
+      <h2>Contato</h2>
+    </div>
+    <p class="contact__sub">Disponível para serviços e novas conexões. Envie uma mensagem pelo formulário.</p>
 
-    <!-- Configuração FormSubmit -->
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_subject" value="Nova mensagem do seu Portfólio">
-    <input type="hidden" name="_template" value="box">
-    <input type="hidden" name="_next" value="https://portfolio-flax-five-31.vercel.app/obrigado.html">
+    <form action="https://formsubmit.co/dxrktavares3@gmail.com" method="POST" class="contact__form">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="Nova mensagem do seu Portfólio">
+      <input type="hidden" name="_template" value="box">
+      <input type="hidden" name="_next" value="https://portfolio-flax-five-31.vercel.app/obrigado.html">
+      <input type="text" name="_honey" style="display:none">
 
-    <!-- Honeypot anti-spam -->
-    <input type="text" name="_honey" style="display:none">
+      <div class="form__row">
+        <div class="form__group">
+          <label for="nome">Nome</label>
+          <input id="nome" type="text" name="Nome" placeholder="Seu nome" required>
+        </div>
+        <div class="form__group">
+          <label for="email">E-mail</label>
+          <input id="email" type="email" name="Email" placeholder="Seu e-mail" required>
+        </div>
+      </div>
+      <div class="form__group">
+        <label for="msg">Mensagem</label>
+        <textarea id="msg" name="Mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+      </div>
+      <button type="submit" class="btn btn--primary">
+        <span>Enviar mensagem</span>
+        <i class="bi bi-send"></i>
+      </button>
+    </form>
 
-    <input type="text" name="Nome" placeholder="Seu nome" required>
-    <input type="email" name="Email" placeholder="Seu e-mail" required>
-    <textarea name="Mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
-
-    <button type="submit" class="btn btn--primary">
-      Enviar mensagem
-    </button>
-  </form>
-
-  <ul class="menu menu--social" style="margin-top:2rem;">
-    <li>
-      <a class="menu__link" href="https://github.com/bessa2121" target="_blank">
-        <i class="menu__icon bi bi-github"></i>
-        <span>GitHub</span>
+    <div class="contact__social">
+      <a class="social__pill" href="https://github.com/bessa2121" target="_blank">
+        <i class="bi bi-github"></i><span>GitHub</span>
       </a>
-    </li>
-    <li>
-      <a class="menu__link" href="https://www.linkedin.com/in/davi-tavares-038b472a5/" target="_blank">
-        <i class="menu__icon bi bi-linkedin"></i>
-        <span>LinkedIn</span>
+      <a class="social__pill" href="https://www.linkedin.com/in/davi-tavares-038b472a5/" target="_blank">
+        <i class="bi bi-linkedin"></i><span>LinkedIn</span>
       </a>
-    </li>
-    <li>
-      <a class="menu__link" href="https://www.instagram.com/d.tavrs/" target="_blank">
-        <i class="menu__icon bi bi-instagram"></i>
-        <span>Instagram</span>
+      <a class="social__pill" href="https://www.instagram.com/d.tavrs/" target="_blank">
+        <i class="bi bi-instagram"></i><span>Instagram</span>
       </a>
-    </li>
-  </ul>
-</section>
+    </div>
+  </section>
 
-  <footer>
-    <p>
-      © 2026. Portfólio desenvolvido para fins profissionais por 
-      <a href="https://github.com/bessa2121" target="_blank">Davi Tavares</a>.
-    </p>
+  <footer class="footer">
+    <div class="footer__inner">
+      <a href="#home" class="brand__link">
+        <span class="brand__dot"></span>
+        <span class="brand__name">DT</span>
+      </a>
+      <p>© 2026 · Desenvolvido por <a href="https://github.com/bessa2121" target="_blank">Davi Tavares</a></p>
+    </div>
   </footer>
+
   <script src="assets/js/scripts.js"></script>
 </body>
 </html>
