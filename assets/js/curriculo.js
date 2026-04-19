@@ -117,56 +117,29 @@ document.querySelectorAll(".project__card").forEach((card, i) => {
   card.classList.add("reveal");
   card.style.transitionDelay = `${i * 0.12}s`;
 });
-
 // =================
-// Scroll Reveal em escadinha
+// Scroll Reveal moderno
 // =================
 
-const observer = new IntersectionObserver((entries)=>{
-  
-  entries.forEach(entry=>{
-    
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }else{
-      entry.target.classList.remove("show");
-    }
+const reveals = document.querySelectorAll(
+  ".reveal, .reveal-left, .reveal-right, .reveal-up"
+);
 
-  });
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
 
-},{
-  threshold:0.15
-});
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      } else {
+        entry.target.classList.remove("visible");
+      }
 
-const hiddenElements = document.querySelectorAll(".reveal");
+    });
+  },
+  {
+    threshold: 0.15
+  }
+);
 
-hiddenElements.forEach(el=>{
-  observer.observe(el);
-});
-
-/* animação scroll reveal */
-
-const reveals = document.querySelectorAll(".reveal");
-
-const revealOnScroll = () => {
-
-  const windowHeight = window.innerHeight;
-
-  reveals.forEach((el) => {
-
-    const elementTop = el.getBoundingClientRect().top;
-    const elementVisible = 120;
-
-    if(elementTop < windowHeight - elementVisible){
-      el.classList.add("active");
-    }else{
-      el.classList.remove("active");
-    }
-
-  });
-
-};
-
-window.addEventListener("scroll", revealOnScroll);
-
-revealOnScroll();
+reveals.forEach((el) => observer.observe(el));

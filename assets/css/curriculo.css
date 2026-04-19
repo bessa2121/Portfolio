@@ -732,3 +732,40 @@ img { display: block; max-width: 100%; }
   .project, .timeline__body p, .block__text { font-size: .78rem; }
   .resume-footer { display: none; }
 }
+
+/* ============================================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================================ */
+
+.reveal,
+.reveal-left,
+.reveal-right,
+.reveal-up {
+  opacity: 0;
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+/* Direções */
+
+.reveal {
+  transform: translateY(40px); /* baixo → sobe */
+}
+
+.reveal-up {
+  transform: translateY(-40px); /* cima → desce */
+}
+
+.reveal-left {
+  transform: translateX(-40px);
+}
+
+.reveal-right {
+  transform: translateX(40px);
+}
+
+/* Estado visível */
+
+.visible {
+  opacity: 1;
+  transform: translate(0,0);
+}

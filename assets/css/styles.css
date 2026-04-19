@@ -1031,3 +1031,19 @@ body.obrigado {
 
 .success { color: #22c55e; text-align: center; margin-top: 1.5rem; font-size: 1.1rem; }
 .error   { color: #ef4444; text-align: center; margin-top: 1.5rem; font-size: 1.1rem; }
+
+/* ============================================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================================ */
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
