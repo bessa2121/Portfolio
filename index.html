@@ -1,463 +1,583 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Davi Tavares | Back-end Developer</title>
-  <meta name="description" content="Portfólio do desenvolvedor back-end Davi Tavares para compartilhar projetos e habilidades desenvolvidas.">
+  <title>Davi Tavares | Backend Developer</title>
+  <meta name="description" content="Portfólio de Davi Tavares — Desenvolvedor Back-end especialista em Java, Spring Boot, React e MySQL. São Paulo, SP.">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header" id="header">
-    <div class="header__brand">
-      <a href="#home" class="brand__link">
-        <span class="brand__dot"></span>
-        <span class="brand__name">DT</span>
-      </a>
-    </div>
-    <nav class="header__nav">
-      <ul class="menu menu--principal">
-        <li class="menu__item"><a class="menu__link active" href="#home">Home</a></li>
-        <li class="menu__item"><a class="menu__link" href="#projetos">Projetos</a></li>
-        <li class="menu__item"><a class="menu__link" href="#sobre">Sobre</a></li>
-        <li class="menu__item"><a class="menu__link" href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-    <button id="toggleTheme" class="theme-toggle" aria-label="Alternar tema">
-      <i class="bi bi-sun"></i>
-    </button>
-  </header>
+<!-- ── CURSOR + CANVAS ──────────────────────────────────── -->
+<div id="cursor-glow"></div>
+<canvas id="bg-canvas"></canvas>
 
-  <!-- MOBILE NAV -->
-  <nav class="nav--mobile">
-    <ul class="menu menu--mobile">
-      <li class="menu__item"><a class="menu__link active" href="#home"><i class="bi bi-house-door"></i><span>Home</span></a></li>
-      <li class="menu__item"><a class="menu__link" href="#projetos"><i class="bi bi-window-stack"></i><span>Projetos</span></a></li>
-      <li class="menu__item"><a class="menu__link" href="#sobre"><i class="bi bi-person"></i><span>Sobre</span></a></li>
-      <li class="menu__item"><a class="menu__link" href="#contato"><i class="bi bi-envelope"></i><span>Contato</span></a></li>
-    </ul>
+<!-- ── HEADER ──────────────────────────────────────────── -->
+<header id="header">
+  <a href="#home" class="logo">
+    <span class="logo-icon">DT</span>
+    Davi Tavares
+  </a>
+  <nav>
+    <a href="#home"     class="active" data-nav="home">Home</a>
+    <a href="#projetos" data-nav="projetos">Projetos</a>
+    <a href="#sobre"    data-nav="sobre">Sobre</a>
+    <a href="#contato"  data-nav="contato">Contato</a>
   </nav>
+</header>
 
-  <!-- HERO -->
-  <main id="home" class="hero">
-    <div class="hero__noise"></div>
-    <div class="hero__content reveal">
-      <div class="hero__label">
-        <span class="label__dot"></span>
-        <span>Disponível para projetos</span>
-      </div>
-      <h1 class="hero__title">
-        <span class="hero__line">Soluções</span>
-        <span class="hero__line hero__line--accent">Lógicas &</span>
-        <span class="hero__line">Back-end</span>
-      </h1>
-      <p class="hero__sub">Davi Tavares — Desenvolvedor Back-end baseado em São Paulo, SP.</p>
-      <div class="hero__actions">
-        <a href="#projetos" class="btn btn--primary">
-          <span>Ver Projetos</span>
-          <i class="bi bi-arrow-down-right"></i>
-        </a>
-        <ul class="social__list">
-          <li><a class="social__link" href="https://github.com/bessa2121" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a></li>
-          <li><a class="social__link" href="https://www.linkedin.com/in/davi-tavares-038b472a5/" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
-          <li><a class="social__link" href="https://www.instagram.com/d.tavrs/" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="hero__scroll">
-      <span>scroll</span>
-      <div class="scroll__line"></div>
-    </div>
-  </main>
+<!-- ── MOBILE NAV ──────────────────────────────────────── -->
+<nav class="nav-mobile">
+  <ul>
+    <li>
+      <a href="#home" class="active" data-nav="home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="#projetos" data-nav="projetos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+          <line x1="8" y1="21" x2="16" y2="21"/>
+          <line x1="12" y1="17" x2="12" y2="21"/>
+        </svg>
+        Projetos
+      </a>
+    </li>
+    <li>
+      <a href="#sobre" data-nav="sobre">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        Sobre
+      </a>
+    </li>
+    <li>
+      <a href="#contato" data-nav="contato">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        Contato
+      </a>
+    </li>
+  </ul>
+</nav>
 
-  <!-- TECHNOLOGIES -->
-  <section class="technologies reveal">
-    <div class="technologies__inner">
-      <p class="tech__label">Stack principal</p>
-      <ul class="technologies__list">
-        <li class="technologies__item">
-          <img class="technologies__logo" src="assets/images/technologies/Java.svg" alt="Java">
-          <span>Java</span>
-        </li>
-        <li class="technologies__item">
-          <img class="technologies__logo" src="assets/images/technologies/Docker.svg" alt="Docker">
-          <span>Docker</span>
-        </li>
-        <li class="technologies__item">
-          <img class="technologies__logo" src="assets/images/technologies/MySQL.svg" alt="MySQL">
-          <span>MySQL</span>
-        </li>
-        <li class="technologies__item">
-          <img class="technologies__logo" src="assets/images/technologies/HTML.svg" alt="HTML">
-          <span>HTML</span>
-        </li>
-        <li class="technologies__item">
-          <img class="technologies__logo" src="assets/images/technologies/CSS.svg" alt="CSS">
-          <span>CSS</span>
-        </li>
-      </ul>
-    </div>
-  </section>
+<!-- ── HERO ────────────────────────────────────────────── -->
+<main id="home" class="hero">
+  <div class="hero-grid-lines"></div>
 
-  <!-- PROJECTS -->
-  <section id="projetos" class="projects">
-    <div class="section__header reveal">
-      <span class="section__num">02</span>
-      <h2>Projetos</h2>
-    </div>
+  <div class="hero-tag">
+    <span class="hero-tag-dot"></span>
+    Disponível para projetos
+  </div>
 
-    <div class="projects__grid reveal">
+  <h1 class="hero-title">
+    <span class="line"><span class="line-inner">Backend</span></span>
+    <span class="line"><span class="line-inner accent-blue">Developer</span></span>
+    <span class="line"><span class="line-inner accent-purple">Davi Tavares</span></span>
+  </h1>
 
-      <!-- Card 1 -->
-      <article class="project__card reveal">
-        <div class="project__image-wrap">
-          <img class="project__image" src="assets/images/projects/ExpoCuca_PC.png" alt="ExpoCuca">
-          <div class="project__overlay">
-            <a href="https://github.com/bessa2121/PACMAN.git" class="overlay__btn" target="_blank">
-              <i class="bi bi-arrow-up-right"></i>
-            </a>
-          </div>
-        </div>
-        <div class="project__body">
-          <div class="project__meta">
-            <span class="project__num">01</span>
-            <ul class="project__tags">
-              <li>PHP</li><li>JavaScript</li><li>CSS</li>
-            </ul>
-          </div>
-          <h3 class="project__title">ExpoCuca</h3>
-          <p class="project__desc">Escape Run Pac-Man com sistema de pontuação, ranking e painel de admin.</p>
-          <ul class="project__features">
-            <li>Adição de pontos em tempo real</li>
-            <li>Tabela de Ranking dinâmica</li>
-            <li>Login para Admins</li>
-          </ul>
-          <div class="project__links">
-            <a href="https://github.com/bessa2121/PACMAN.git" class="btn btn--primary" target="_blank">
-              <span>Prévia</span><i class="bi bi-arrow-up-right"></i>
-            </a>
-            <a href="https://github.com/bessa2121/PACMAN.git" class="btn btn--ghost" target="_blank">
-              <i class="bi bi-github"></i><span>Repositório</span>
-            </a>
-          </div>
-        </div>
-      </article>
+  <p class="hero-sub" id="hero-typed">// Back-end Developer</p>
 
-      <!-- Card 2 -->
-      <article class="project__card project__card--alt reveal">
-        <div class="project__image-wrap">
-          <img class="project__image" src="assets/images/projects/Microservicos_PC.png" alt="Warehouse e Storefront">
-          <div class="project__overlay">
-            <a href="https://github.com/bessa2121/Microservi-os_DIO.git" class="overlay__btn" target="_blank">
-              <i class="bi bi-arrow-up-right"></i>
-            </a>
-          </div>
-        </div>
-        <div class="project__body">
-          <div class="project__meta">
-            <span class="project__num">02</span>
-            <ul class="project__tags">
-              <li>Java</li><li>Docker</li><li>MySQL</li>
-            </ul>
-          </div>
-          <h3 class="project__title">Warehouse & Storefront</h3>
-          <p class="project__desc">Arquitetura de microsserviços com Spring Boot e mensageria assíncrona.</p>
-          <ul class="project__features">
-            <li>REST API entre serviços</li>
-            <li>Eventos via mensageria de estoque</li>
-            <li>Controle de Produtos & SOLID</li>
-          </ul>
-          <div class="project__links">
-            <a href="https://github.com/bessa2121/Microservi-os_DIO.git" class="btn btn--primary" target="_blank">
-              <span>Prévia</span><i class="bi bi-arrow-up-right"></i>
-            </a>
-            <a href="https://github.com/bessa2121/Microservi-os_DIO.git" class="btn btn--ghost" target="_blank">
-              <i class="bi bi-github"></i><span>Repositório</span>
-            </a>
-          </div>
-        </div>
-      </article>
+  <div class="stack-pills">
+    <!-- Java -->
+    <span class="stack-pill pill-java">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.892 3.776-.892M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0-.001.07-.062.09-.118M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.888 4.832-.001 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.19-7.627M9.734 23.924c4.322.277 10.959-.153 11.116-2.198 0 0-.302.775-3.572 1.391-3.688.694-8.239.613-10.937.168 0-.001.553.457 3.393.639"/>
+      </svg>
+      Java
+    </span>
+    <!-- Spring Boot -->
+    <span class="stack-pill pill-spring">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.59 5.166a11.1 11.1 0 01-1.252 2.02c-1.69 2.25-3.986 3.48-6.6 3.694-2.086.168-3.84-.6-5.49-1.754C5.65 7.714 3.89 6.496 1.5 6.662c-.084.006-.166.01-.25.016l-.25.014c2.182-2.95 5.64-4.862 9.542-4.862 3.61 0 6.868 1.582 9.048 4.098v.001l.25-.762zm.43 1.348c.652 1.37 1.02 2.896 1.02 4.502 0 5.8-4.694 10.502-10.488 10.502-1.558 0-3.036-.34-4.363-.952 2.166-.142 3.984-1.35 5.438-2.49 1.752-1.37 3.258-2.898 4.9-4.07 1.22-.866 2.572-1.39 3.866-1.498.2-.016.396-.028.594-.028l-.02-.136c-.266-1.666-1.164-3.114-2.428-4.098l1.48-1.732zM4.37 18.77a10.45 10.45 0 01-2.862-7.254c0-.574.046-1.138.134-1.686 1.842.276 3.254 1.26 4.636 2.258 1.508 1.09 3.066 2.138 5.01 2.318 1.048.098 2.03-.028 3.006-.29-1.296 1.054-2.776 2.18-4.386 3.088-1.69.956-3.46 1.476-5.22 1.638l-.318-.072z"/>
+      </svg>
+      Spring Boot
+    </span>
+    <!-- React -->
+    <span class="stack-pill pill-react">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M14.23 12.004a2.236 2.236 0 01-2.235 2.236 2.236 2.236 0 01-2.236-2.236 2.236 2.236 0 012.235-2.236 2.236 2.236 0 012.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38a2.167 2.167 0 00-1.092-.278z"/>
+      </svg>
+      React
+    </span>
+    <!-- MySQL -->
+    <span class="stack-pill pill-mysql">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.15zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0a66.063 66.063 0 01.28-5.953h1.12l1.36 4.233h.01l1.36-4.233h1.102c.007.983.076 2.556.146 5.953zm4.914 0H9.596v-2.82c0-.578-.227-.867-.682-.867-.326 0-.559.157-.7.47-.014.047-.02.11-.02.187v3.03h-1.09v-3.983h1.09v.624c.179-.37.517-.568 1.012-.568.344 0 .647.126.878.382.23.255.346.625.346 1.11v2.435zm4.71-3.47c-.48 0-.858.178-1.13.534-.23.296-.347.69-.347 1.18 0 .507.115.907.344 1.203.273.357.652.535 1.134.535.48 0 .857-.178 1.13-.534.23-.296.348-.69.348-1.18 0-.507-.116-.907-.345-1.203-.273-.356-.652-.534-1.133-.534zm0 .843c.28 0 .49.135.63.405.12.228.18.508.18.84 0 .334-.06.614-.18.84-.14.27-.35.404-.63.404s-.49-.134-.63-.404c-.12-.226-.18-.506-.18-.84 0-.332.06-.612.18-.84.14-.27.35-.405.63-.405zM24 18.695h-1.09v-5.953H24v5.953z"/>
+      </svg>
+      MySQL
+    </span>
+  </div>
 
-      <!-- Card 3 -->
-      <article class="project__card">
-        <div class="project__image-wrap">
-          <img class="project__image" src="assets/images/projects/ECOAI_PC.png" alt="ECOAI">
-          <div class="project__overlay">
-            <a href="https://github.com/bessa2121/eco-ia-projeto.git" class="overlay__btn" target="_blank">
-              <i class="bi bi-arrow-up-right"></i>
-            </a>
-          </div>
-        </div>
-        <div class="project__body">
-          <div class="project__meta">
-            <span class="project__num">03</span>
-            <ul class="project__tags">
-              <li>Python</li><li>HTML</li><li>Docker</li>
-            </ul>
-          </div>
-          <h3 class="project__title">ECOAI</h3>
-          <p class="project__desc">IA de reconhecimento e coleta de lixo com geolocalização em tempo real.</p>
-          <ul class="project__features">
-            <li>Reconhecimento de resíduos por IA</li>
-            <li>Google Maps API integrada</li>
-            <li>Histórico de descartes</li>
-          </ul>
-          <div class="project__links">
-            <a href="https://github.com/bessa2121/eco-ia-projeto.git" class="btn btn--primary" target="_blank">
-              <span>Prévia</span><i class="bi bi-arrow-up-right"></i>
-            </a>
-            <a href="https://github.com/bessa2121/eco-ia-projeto.git" class="btn btn--ghost" target="_blank">
-              <i class="bi bi-github"></i><span>Repositório</span>
-            </a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="projects__cta">
-      <a href="https://github.com/bessa2121" class="btn btn--primary" target="_blank">
-        <span>Ver todos no GitHub</span>
-        <i class="bi bi-arrow-up-right"></i>
+  <div class="hero-actions">
+    <a href="#projetos" class="btn btn-primary">
+      Ver Projetos
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M7 17l10-10M17 17V7H7"/>
+      </svg>
+    </a>
+    <div class="social-links">
+      <a href="https://github.com/bessa2121" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/davi-tavares-038b472a5/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/d.tavrs/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
       </a>
     </div>
-  </section>
+  </div>
 
-  <!-- SOBRE -->
-  <section id="sobre" class="about reveal">
-    <div class="section__header">
-      <span class="section__num">03</span>
-      <h2>Sobre</h2>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    scroll
+  </div>
+</main>
+
+<!-- ── STACK ─────────────────────────────────────────────── -->
+<section class="stack-section reveal">
+  <p class="stack-section-label">// Stack principal</p>
+  <div class="stack-grid">
+
+    <div class="stack-card java">
+      <div class="stack-icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.892 3.776-.892M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0-.001.07-.062.09-.118M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.888 4.832-.001 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.19-7.627M9.734 23.924c4.322.277 10.959-.153 11.116-2.198 0 0-.302.775-3.572 1.391-3.688.694-8.239.613-10.937.168 0-.001.553.457 3.393.639"/>
+        </svg>
+      </div>
+      <p class="stack-name">Java</p>
+      <p class="stack-desc">POO · JUnit · Streams</p>
     </div>
 
-    <div class="about__grid">
-      <div class="about__photo-wrap reveal">
-        <img class="about__photo" src="assets/images/perfil_photo.jpg" alt="Davi Tavares">
-        <div class="about__photo-deco"></div>
+    <div class="stack-card spring">
+      <div class="stack-icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.59 5.166a11.1 11.1 0 01-1.252 2.02c-1.69 2.25-3.986 3.48-6.6 3.694-2.086.168-3.84-.6-5.49-1.754C5.65 7.714 3.89 6.496 1.5 6.662l-.25.016-.25.014c2.182-2.95 5.64-4.862 9.542-4.862 3.61 0 6.868 1.582 9.048 4.098v.001l.25-.762zm.43 1.348c.652 1.37 1.02 2.896 1.02 4.502 0 5.8-4.694 10.502-10.488 10.502-1.558 0-3.036-.34-4.363-.952 2.166-.142 3.984-1.35 5.438-2.49 1.752-1.37 3.258-2.898 4.9-4.07 1.22-.866 2.572-1.39 3.866-1.498.2-.016.396-.028.594-.028l-.02-.136c-.266-1.666-1.164-3.114-2.428-4.098l1.48-1.732zM4.37 18.77a10.45 10.45 0 01-2.862-7.254c0-.574.046-1.138.134-1.686 1.842.276 3.254 1.26 4.636 2.258 1.508 1.09 3.066 2.138 5.01 2.318 1.048.098 2.03-.028 3.006-.29-1.296 1.054-2.776 2.18-4.386 3.088-1.69.956-3.46 1.476-5.22 1.638l-.318-.072z"/>
+        </svg>
       </div>
+      <p class="stack-name">Spring Boot</p>
+      <p class="stack-desc">REST API · Security · JPA</p>
+    </div>
 
-      <div class="about__info reveal">
-        <p class="about__text">
-          Apaixonado por esportes e tecnologia. Meu primeiro "Hello World" foi há 1 ano, quando tive contato com HTML, CSS e Portugol. Atualmente curso Desenvolvimento de Sistemas na <strong>ETEC Prof. Camargo Aranha</strong>.
-        </p>
-        <div class="about__badge">
-          <i class="bi bi-translate"></i>
-          <span>Inglês Avançado &nbsp;·&nbsp; Espanhol Básico</span>
-        </div>
-        <div class="about__actions">
-          <a href="https://www.linkedin.com/in/davi-tavares-038b472a5/" class="btn btn--primary" target="_blank">
-            <span>Conecte-se</span><i class="bi bi-arrow-up-right"></i>
+    <div class="stack-card react">
+      <div class="stack-icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M14.23 12.004a2.236 2.236 0 01-2.235 2.236 2.236 2.236 0 01-2.236-2.236 2.236 2.236 0 012.235-2.236 2.236 2.236 0 012.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38a2.167 2.167 0 00-1.092-.278z"/>
+        </svg>
+      </div>
+      <p class="stack-name">React</p>
+      <p class="stack-desc">Hooks · TypeScript · Vite</p>
+    </div>
+
+    <div class="stack-card mysql">
+      <div class="stack-icon">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.15zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0a66.063 66.063 0 01.28-5.953h1.12l1.36 4.233h.01l1.36-4.233h1.102c.007.983.076 2.556.146 5.953zm4.914 0H9.596v-2.82c0-.578-.227-.867-.682-.867-.326 0-.559.157-.7.47-.014.047-.02.11-.02.187v3.03h-1.09v-3.983h1.09v.624c.179-.37.517-.568 1.012-.568.344 0 .647.126.878.382.23.255.346.625.346 1.11v2.435zm4.71-3.47c-.48 0-.858.178-1.13.534-.23.296-.347.69-.347 1.18 0 .507.115.907.344 1.203.273.357.652.535 1.134.535.48 0 .857-.178 1.13-.534.23-.296.348-.69.348-1.18 0-.507-.116-.907-.345-1.203-.273-.356-.652-.534-1.133-.534zm0 .843c.28 0 .49.135.63.405.12.228.18.508.18.84 0 .334-.06.614-.18.84-.14.27-.35.404-.63.404s-.49-.134-.63-.404c-.12-.226-.18-.506-.18-.84 0-.332.06-.612.18-.84.14-.27.35-.405.63-.405zM24 18.695h-1.09v-5.953H24v5.953z"/>
+        </svg>
+      </div>
+      <p class="stack-name">MySQL</p>
+      <p class="stack-desc">Queries · Migrations · JPA</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── PROJECTS ───────────────────────────────────────────── -->
+<section id="projetos" class="projects-section">
+  <div class="section-header reveal">
+    <span class="section-num">// 02</span>
+    <h2 class="section-title">Projetos</h2>
+    <span class="section-line"></span>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- Featured: Warehouse & Storefront -->
+    <article class="project-card featured reveal">
+      <div class="project-img-wrap">
+        <img src="assets/images/projects/Microservicos_PC.png"
+             alt="Warehouse & Storefront"
+             loading="lazy"
+             onerror="this.src='https://opengraph.githubassets.com/1/bessa2121/Microservi-os_DIO'">
+        <div class="project-overlay">
+          <a href="https://github.com/bessa2121/Microservi-os_DIO.git" target="_blank" rel="noopener" class="overlay-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l10-10M17 17V7H7"/></svg>
           </a>
-          <a href="/curriculo.html" class="btn btn--ghost">
-            <span>Currículo</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-num">01 — Destaque</span>
+          <div class="project-tags">
+            <span class="project-tag tag-java">Java</span>
+            <span class="project-tag tag-spring">Spring Boot</span>
+            <span class="project-tag tag-mysql">MySQL</span>
+            <span class="project-tag tag-docker">Docker</span>
+          </div>
+        </div>
+        <h3 class="project-title">Warehouse &amp; Storefront</h3>
+        <p class="project-desc">Arquitetura de microsserviços com Spring Boot, mensageria assíncrona e Docker Compose. APIs REST independentes com banco MySQL por serviço.</p>
+        <ul class="project-features">
+          <li class="project-feature">REST API entre serviços desacoplados</li>
+          <li class="project-feature">Eventos via mensageria de estoque assíncrona</li>
+          <li class="project-feature">Princípios SOLID + Clean Architecture</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://github.com/bessa2121/Microservi-os_DIO.git" class="btn btn-primary" target="_blank" rel="noopener">
+            Ver Repositório
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l10-10M17 17V7H7"/></svg>
           </a>
         </div>
       </div>
-    </div>
+    </article>
 
-    <div class="about__details">
-      <!-- Formação -->
-      <div class="detail__block reveal">
-        <h3 class="detail__title"><i class="bi bi-mortarboard"></i> Formação</h3>
-        <div class="detail__card">
-          <span class="detail__period">2024 — Atualmente</span>
-          <h4>Desenvolvimento de Sistemas</h4>
-          <p><i class="bi bi-bank"></i> ETEC Prof. Camargo Aranha &nbsp;·&nbsp; São Paulo, SP</p>
+    <!-- ExpoCuca -->
+    <article class="project-card reveal">
+      <div class="project-img-wrap">
+        <img src="assets/images/projects/ExpoCuca_PC.png"
+             alt="ExpoCuca"
+             loading="lazy"
+             onerror="this.src='https://opengraph.githubassets.com/1/bessa2121/PACMAN'">
+        <div class="project-overlay">
+          <a href="https://github.com/bessa2121/PACMAN.git" target="_blank" rel="noopener" class="overlay-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l10-10M17 17V7H7"/></svg>
+          </a>
         </div>
       </div>
-
-      <!-- Cursos -->
-      <div class="detail__block">
-        <h3 class="detail__title"><i class="bi bi-journal-bookmark"></i> Cursos & Certificações</h3>
-        <div id="accordion">
-
-          <!-- HACKATHON -->
-          <div class="accordion__item active">
-            <button class="accordion__header">
-              <span><i class="bi bi-trophy-fill accordion__icon--trophy"></i> Hackathon Game On de Tecnologia — 1º Lugar</span>
-              <i class="bi bi-plus-lg"></i>
-            </button>
-            <div class="accordion__body">
-              <p><strong>Se Liga By Mileto</strong> · 2026 · 7 dias · 30h</p>
-              <p>Top 1 entre 25 participantes no Hackathon em estilo competitivo com temática de primeiro emprego. Desenvolveu o <strong>GameOnTech</strong> — portal de onboarding corporativo com IA — aplicação de uso intencional de Inteligência Artificial baseada em case real.</p>
-              <p class="accordion__tags">
-                <ul class="project__tags">
-                  <li>Java</li>
-                  <li>SpringBoot</li>
-                  <li>IA</li>
-                 </p>
-              </ul>
-            </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-num">02</span>
+          <div class="project-tags">
+            <span class="project-tag tag-php">PHP</span>
+            <span class="project-tag tag-js">JavaScript</span>
           </div>
-
-          <!-- BOOTCAMP 1 -->
-          <div class="accordion__item">
-            <button class="accordion__header">
-              <span>Backend com Java & AWS</span>
-              <i class="bi bi-plus-lg"></i>
-            </button>
-            <div class="accordion__body">
-              <p><strong>CI&T + Digital Innovation One</strong> · 2026</p>
-              <p>Microsserviços, APIs REST, cloud AWS e boas práticas de desenvolvimento Java em ambiente corporativo.</p>
-              <p class="accordion__tags">
-                <ul class="project__tags">
-                  <li>Java</li>
-                  <li>SpringBoot</li>
-                  <li>AWS</li>
-                  <li>REST</li>
-                </ul>
-              </p>
-            </div>
-          </div>
-
-          <!-- BOOTCAMP 2 -->
-          <div class="accordion__item">
-            <button class="accordion__header">
-              <span>Back-End com Java & QA</span>
-              <i class="bi bi-plus-lg"></i>
-            </button>
-            <div class="accordion__body">
-              <p><strong>Almaviva + Digital Innovation One</strong> · 2026</p>
-              <p>Desenvolvimento back-end, qualidade de software e testes automatizados com JUnit em projetos reais.</p>
-              <p class="accordion__tags">
-                <ul class="project__tags">
-                  <li>Java</li>
-                  <li>JUnit</li>
-                  <li>QA</li>
-                  <li>Testes</li>
-                </ul>
-              </p>
-            </div>
-          </div>
-
-          <!-- BOOTCAMP 3 -->
-          <div class="accordion__item">
-            <button class="accordion__header">
-              <span>Primeiros Passos com Java</span>
-              <i class="bi bi-plus-lg"></i>
-            </button>
-            <div class="accordion__body">
-              <p><strong>Riachuelo + Digital Innovation One</strong> · 2025</p>
-              <p>POO, APIs REST, integração com banco de dados, testes unitários e versionamento com Git/GitHub.</p>
-              <p class="accordion__tags">
-                <ul class="project__tags">
-                  <li>Java</li>
-                  <li>POO</li>
-                  <li>MySQL</li>
-                  <li>Git</li>
-                </ul>
-              </p>
-            </div>
-          </div>
-
-          <!-- AWS CERTS -->
-          <div class="accordion__item">
-            <button class="accordion__header">
-              <span>Certificações AWS Cloud</span>
-              <i class="bi bi-plus-lg"></i>
-            </button>
-            <div class="accordion__body">
-              <p><strong>Digital Innovation One</strong> · 2026</p>
-              <ul class="accordion__checklist">
-                <li><i class="bi bi-check2"></i>Introdução ao Conceito de Cloud</li>
-                <li><i class="bi bi-check2"></i>Entendendo a Infraestrutura AWS</li>
-                <li><i class="bi bi-check2"></i>Computação em AWS</li>
-                <li><i class="bi bi-check2"></i>Redes em AWS</li>
-                <li><i class="bi bi-check2"></i>Armazenamento e Banco de Dados AWS</li>
-                <li><i class="bi bi-check2"></i>Segurança na Nuvem com AWS</li>
-                <li><i class="bi bi-check2"></i>Monitoramento e Análise na AWS</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- DIO CURSOS -->
-          <div class="accordion__item">
-            <button class="accordion__header">
-              <span>Versionamento com Git e GitHub</span>
-              <i class="bi bi-plus-lg"></i>
-            </button>
-            <div class="accordion__body">
-              <p><strong>Digital Innovation One</strong> · Fev 2023 · 2h</p>
-              <p>Versionamento, instalação, autenticação, repositórios, branches, desfazer e sincronizar alterações.</p>
-              <p class="accordion__tags">
-                <ul class="project__tags">
-                  <li>Git</li>
-                  <li>GitHub</li>
-                </ul>
-              </p>
-            </div>
-          </div>
-
+        </div>
+        <h3 class="project-title">ExpoCuca</h3>
+        <p class="project-desc">Escape Run Pac-Man com sistema de pontuação em tempo real, ranking dinâmico e painel de administração protegido por login.</p>
+        <ul class="project-features">
+          <li class="project-feature">Pontuação em tempo real</li>
+          <li class="project-feature">Tabela de ranking dinâmica</li>
+          <li class="project-feature">Painel Admin com autenticação</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://github.com/bessa2121/PACMAN.git" class="btn btn-ghost" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            GitHub
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </article>
 
-  <!-- CONTATO -->
-  <section id="contato" class="contact reveal">
-    <div class="section__header">
-      <span class="section__num">04</span>
-      <h2>Contato</h2>
-    </div>
-    <p class="contact__sub">Disponível para serviços e novas conexões. Envie uma mensagem pelo formulário.</p>
+    <!-- ECOAI -->
+    <article class="project-card reveal">
+      <div class="project-img-wrap">
+        <img src="assets/images/projects/ECOAI_PC.png"
+             alt="ECOAI"
+             loading="lazy"
+             onerror="this.src='https://opengraph.githubassets.com/1/bessa2121/eco-ia-projeto'">
+        <div class="project-overlay">
+          <a href="https://github.com/bessa2121/eco-ia-projeto.git" target="_blank" rel="noopener" class="overlay-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l10-10M17 17V7H7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-meta">
+          <span class="project-num">03</span>
+          <div class="project-tags">
+            <span class="project-tag tag-python">Python</span>
+            <span class="project-tag tag-docker">Docker</span>
+          </div>
+        </div>
+        <h3 class="project-title">ECOAI</h3>
+        <p class="project-desc">IA de reconhecimento e coleta de lixo com geolocalização em tempo real integrada ao Google Maps API.</p>
+        <ul class="project-features">
+          <li class="project-feature">Reconhecimento de resíduos por IA</li>
+          <li class="project-feature">Integração Google Maps API</li>
+          <li class="project-feature">Histórico de descartes por usuário</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://github.com/bessa2121/eco-ia-projeto.git" class="btn btn-ghost" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </article>
 
-    <form action="https://formsubmit.co/dxrktavares3@gmail.com" method="POST" class="contact__form reveal">
+  </div>
+
+  <div class="projects-cta reveal">
+    <a href="https://github.com/bessa2121" class="btn btn-ghost" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      Ver todos no GitHub
+    </a>
+  </div>
+</section>
+
+<!-- ── SOBRE ──────────────────────────────────────────────── -->
+<section id="sobre" class="about-section">
+  <div class="section-header reveal">
+    <span class="section-num">// 03</span>
+    <h2 class="section-title">Sobre</h2>
+    <span class="section-line"></span>
+  </div>
+
+  <div class="about-grid reveal">
+    <div class="about-photo-wrap">
+      <img class="about-photo"
+           src="assets/images/perfil_photo.jpg"
+           alt="Davi Tavares"
+           onerror="this.style.minHeight='360px';this.style.background='var(--bg3)'">
+      <div class="about-photo-deco"></div>
+      <div class="about-photo-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        1º Lugar — Hackathon
+      </div>
+    </div>
+
+    <div class="about-info">
+      <p class="about-text">
+        Apaixonado por esportes e tecnologia. Meu primeiro "Hello World" foi há 1 ano, com HTML, CSS e Portugol. Hoje foco em <strong>Java e Spring Boot</strong> para construir sistemas escaláveis e bem estruturados, com o banco <strong>MySQL</strong> e interfaces em <strong>React</strong>.
+      </p>
+      <p class="about-text">
+        Curso Desenvolvimento de Sistemas na <strong>ETEC Prof. Camargo Aranha</strong> e participei de bootcamps com CI&T, Almaviva e Riachuelo pela DIO — além de conquistar o <strong>1º lugar</strong> no Hackathon Game On de Tecnologia.
+      </p>
+      <div class="about-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3l14 9-14 9V3z"/></svg>
+        Inglês Avançado &nbsp;·&nbsp; Espanhol Básico
+      </div>
+      <div class="about-actions">
+        <a href="https://www.linkedin.com/in/davi-tavares-038b472a5/" class="btn btn-primary" target="_blank" rel="noopener">
+          Conecte-se
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l10-10M17 17V7H7"/></svg>
+        </a>
+        <a href="curriculo.html" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Currículo
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-details reveal">
+    <!-- Formação -->
+    <div>
+      <p class="detail-block-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        Formação
+      </p>
+      <div class="edu-card">
+        <p class="edu-period">2024 — Atualmente</p>
+        <p class="edu-title">Desenvolvimento de Sistemas</p>
+        <p class="edu-sub">ETEC Prof. Camargo Aranha · São Paulo, SP</p>
+      </div>
+    </div>
+
+    <!-- Certificações -->
+    <div>
+      <p class="detail-block-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+        Cursos &amp; Certificações
+      </p>
+
+      <div class="accordion">
+
+        <!-- Hackathon -->
+        <div class="accordion-item open trophy">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>
+              🏆 Hackathon Game On de Tecnologia
+              <span class="trophy-badge">1º Lugar</span>
+            </span>
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p><strong>Se Liga By Mileto</strong> · 2026 · 7 dias · 30h</p>
+            <p>Top 1 entre 25 participantes. Desenvolveu o <strong>GameOnTech</strong> — portal de onboarding corporativo com IA generativa aplicada a case real de primeiro emprego.</p>
+            <div class="acc-tags">
+              <span class="project-tag tag-java">Java</span>
+              <span class="project-tag tag-spring">Spring Boot</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend Java AWS -->
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            Backend com Java &amp; AWS
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p><strong>CI&amp;T + Digital Innovation One</strong> · 2026</p>
+            <p>Microsserviços, APIs REST, cloud AWS e boas práticas de desenvolvimento Java em ambiente corporativo.</p>
+            <div class="acc-tags">
+              <span class="project-tag tag-java">Java</span>
+              <span class="project-tag tag-spring">Spring Boot</span>
+              <span class="project-tag tag-aws">AWS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend QA -->
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            Back-End com Java &amp; QA
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p><strong>Almaviva + Digital Innovation One</strong> · 2026</p>
+            <p>Desenvolvimento back-end, qualidade de software e testes automatizados com JUnit em projetos reais.</p>
+            <div class="acc-tags">
+              <span class="project-tag tag-java">Java</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Primeiros Passos Java -->
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            Primeiros Passos com Java
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p><strong>Riachuelo + Digital Innovation One</strong> · 2025</p>
+            <p>POO, APIs REST, integração com banco de dados, testes unitários e versionamento com Git/GitHub.</p>
+            <div class="acc-tags">
+              <span class="project-tag tag-java">Java</span>
+              <span class="project-tag tag-mysql">MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- AWS Certs -->
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            Certificações AWS Cloud
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p><strong>Digital Innovation One</strong> · 2026</p>
+            <ul class="accordion-checklist">
+              <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Introdução ao Conceito de Cloud</li>
+              <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Infraestrutura AWS</li>
+              <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Computação em AWS</li>
+              <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Armazenamento e Banco de Dados AWS</li>
+              <li><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Segurança na Nuvem com AWS</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Git -->
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            Versionamento com Git e GitHub
+            <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p><strong>Digital Innovation One</strong> · Fev 2023 · 2h</p>
+            <p>Versionamento, instalação, autenticação, repositórios, branches, desfazer e sincronizar alterações.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTATO ────────────────────────────────────────────── -->
+<section id="contato" class="contact-section">
+  <div class="section-header reveal">
+    <span class="section-num">// 04</span>
+    <h2 class="section-title">Contato</h2>
+    <span class="section-line"></span>
+  </div>
+
+  <div class="contact-inner reveal">
+    <div>
+      <h3 class="contact-headline">Vamos construir algo juntos?</h3>
+      <p class="contact-sub">Disponível para projetos, freelas e novas conexões. Respondo rápido — basta mandar uma mensagem.</p>
+      <div class="contact-socials">
+        <a href="https://github.com/bessa2121" class="contact-social" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          github.com/bessa2121
+        </a>
+        <a href="https://www.linkedin.com/in/davi-tavares-038b472a5/" class="contact-social" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          linkedin.com/in/davi-tavares
+        </a>
+        <a href="https://www.instagram.com/d.tavrs/" class="contact-social" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          @d.tavrs
+        </a>
+        <a href="mailto:dxrktavares3@gmail.com" class="contact-social">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          dxrktavares3@gmail.com
+        </a>
+      </div>
+    </div>
+
+    <form action="https://formsubmit.co/dxrktavares3@gmail.com" method="POST" class="contact-form">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_subject" value="Nova mensagem do seu Portfólio">
       <input type="hidden" name="_template" value="box">
       <input type="hidden" name="_next" value="https://portfolio-flax-five-31.vercel.app/obrigado.html">
-      <input type="text" name="_honey" style="display:none">
+      <input type="text"   name="_honey" style="display:none">
 
-      <div class="form__row">
-        <div class="form__group">
+      <div class="form-row">
+        <div class="form-group">
           <label for="nome">Nome</label>
           <input id="nome" type="text" name="Nome" placeholder="Seu nome" required>
         </div>
-        <div class="form__group">
+        <div class="form-group">
           <label for="email">E-mail</label>
           <input id="email" type="email" name="Email" placeholder="Seu e-mail" required>
         </div>
       </div>
-      <div class="form__group">
+      <div class="form-group">
         <label for="msg">Mensagem</label>
-        <textarea id="msg" name="Mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+        <textarea id="msg" name="Mensagem" rows="5" placeholder="Sua mensagem..." required></textarea>
       </div>
-      <button type="submit" class="btn btn--primary">
-        <span>Enviar mensagem</span>
-        <i class="bi bi-send"></i>
+      <button type="submit" class="btn btn-primary" style="align-self:flex-start">
+        Enviar mensagem
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
       </button>
     </form>
+  </div>
+</section>
 
-    <div class="contact__social">
-      <a class="social__pill" href="https://github.com/bessa2121" target="_blank">
-        <i class="bi bi-github"></i><span>GitHub</span>
-      </a>
-      <a class="social__pill" href="https://www.linkedin.com/in/davi-tavares-038b472a5/" target="_blank">
-        <i class="bi bi-linkedin"></i><span>LinkedIn</span>
-      </a>
-      <a class="social__pill" href="https://www.instagram.com/d.tavrs/" target="_blank">
-        <i class="bi bi-instagram"></i><span>Instagram</span>
-      </a>
-    </div>
-  </section>
+<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <a href="#home" class="logo">
+    <span class="logo-icon">DT</span>
+    Davi Tavares
+  </a>
+  <p class="footer-copy">
+    © 2026 · Desenvolvido por
+    <a href="https://github.com/bessa2121" target="_blank" rel="noopener">Davi Tavares</a>
+  </p>
+</footer>
 
-  <footer class="footer reveal">
-    <div class="footer__inner">
-      <a href="#home" class="brand__link">
-        <span class="brand__dot"></span>
-        <span class="brand__name">DT</span>
-      </a>
-      <p>© 2026 · Desenvolvido por <a href="https://github.com/bessa2121" target="_blank">Davi Tavares</a></p>
-    </div>
-  </footer>
+<!-- ── SCRIPTS ────────────────────────────────────────────── -->
+<script src="assets/js/scripts.js"></script>
 
-  <script src="assets/js/scripts.js"></script>
 </body>
 </html>

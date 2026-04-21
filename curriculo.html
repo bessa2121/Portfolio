@@ -1,252 +1,383 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Currículo | Davi Tavares</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <title>Currículo — Davi Tavares</title>
+  <meta name="description" content="Currículo de Davi Tavares — Desenvolvedor Back-end especialista em Java, Spring Boot, React e MySQL.">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/curriculo.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/curriculo.css">
 </head>
 <body>
 
-  <!-- TOP BAR -->
-  <header class="topbar">
-    <a href="index.html" class="topbar__back">
-      <i class="bi bi-arrow-left"></i>
-      <span>Portfólio</span>
+<!-- ── CURSOR + CANVAS ──────────────────────────────────── -->
+<div id="cursor-glow"></div>
+<canvas id="bg-canvas"></canvas>
+
+<!-- ── HEADER ──────────────────────────────────────────── -->
+<header id="header">
+  <a href="index.html" class="logo">
+    <span class="logo-icon">DT</span>
+    Davi Tavares
+  </a>
+  <nav>
+    <a href="index.html#home">Home</a>
+    <a href="index.html#projetos">Projetos</a>
+    <a href="index.html#sobre">Sobre</a>
+    <a href="index.html#contato">Contato</a>
+  </nav>
+</header>
+
+<!-- ── MOBILE NAV ──────────────────────────────────────── -->
+<nav class="nav-mobile">
+  <ul>
+    <li>
+      <a href="index.html#home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="index.html#projetos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="3" width="20" height="14" rx="2"/>
+          <line x1="8" y1="21" x2="16" y2="21"/>
+          <line x1="12" y1="17" x2="12" y2="21"/>
+        </svg>
+        Projetos
+      </a>
+    </li>
+    <li>
+      <a href="index.html#sobre">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        Sobre
+      </a>
+    </li>
+    <li>
+      <a href="index.html#contato">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        Contato
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- ── CV CONTENT ─────────────────────────────────────── -->
+<div class="cv-page">
+
+  <!-- Top bar -->
+  <div class="cv-topbar reveal">
+    <a href="index.html" class="cv-topbar-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Voltar ao portfólio
     </a>
-    <button class="topbar__print" onclick="window.print()">
-      <i class="bi bi-download"></i>
-      <span>Baixar PDF</span>
+    <button onclick="printCV()" class="btn btn-primary cv-topbar-print">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+        <polyline points="6 9 6 2 18 2 18 9"/>
+        <path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/>
+        <rect x="6" y="14" width="12" height="8"/>
+      </svg>
+      Imprimir / PDF
     </button>
-  </header>
+  </div>
 
-  <main class="resume">
+  <!-- CV Card -->
+  <div class="cv-card reveal">
 
-    <!-- IDENTITY -->
-    <section class="identity reveal">
-      <p class="identity__tag">Currículo · 2026</p>
-      <h1 class="identity__name">Davi<br><em>Tavares</em></h1>
-      <p class="identity__role">Desenvolvedor Back-End Java</p>
-      <div class="identity__divider"></div>
-      <ul class="identity__contacts">
-        <li><i class="bi bi-geo-alt"></i><span>São Paulo – SP</span></li>
-        <li><i class="bi bi-telephone"></i><span>(11) 95777-3692</span></li>
-        <li><i class="bi bi-envelope"></i><a href="mailto:dxrktavares3@gmail.com">dxrktavares3@gmail.com</a></li>
-        <li><i class="bi bi-github"></i><a href="https://github.com/bessa2121" target="_blank">github.com/bessa2121</a></li>
-        <li><i class="bi bi-linkedin"></i><a href="https://www.linkedin.com/in/davi-tavares-038b472a5/" target="_blank">linkedin.com/in/davi-tavares</a></li>
-      </ul>
-    </section>
-
-    <!-- GRID -->
-    <div class="content">
-
-      <!-- SIDEBAR -->
-      <aside class="sidebar">
-
-        <section class="block reveal-left">
-          <h2 class="block__title">Sobre Mim</h2>
-          <p class="block__text">
-            Desenvolvedor Back-End Java em formação, colaborativo, curioso e focado em entrega de valor real. Aprendo rápido, adapto-me a novas tecnologias e trabalho bem sob pressão. Vencedor do Hackathon Startline 2026 (Mileto). Busco estágio ou posição júnior para crescer dentro de um time de tecnologia.
-          </p>
-        </section>
-
-        <section class="block reveal-left">
-          <h2 class="block__title">Hard Skills</h2>
-          <div class="skills-group">
-            <h3 class="skills-group__label">Back-End</h3>
-            <ul class="skills-group__list">
-              <li>Java</li><li>Spring Boot</li><li>Spring Data JPA</li>
-              <li>Spring MVC</li><li>APIs REST</li><li>RabbitMQ</li>
-            </ul>
-          </div>
-          <div class="skills-group">
-            <h3 class="skills-group__label">DevOps & Banco de Dados</h3>
-            <ul class="skills-group__list">
-              <li>Docker</li><li>Docker Compose</li><li>PostgreSQL</li>
-              <li>MySQL</li><li>Git / GitHub</li>
-            </ul>
-          </div>
-          <div class="skills-group">
-            <h3 class="skills-group__label">Qualidade</h3>
-            <ul class="skills-group__list">
-              <li>JUnit</li><li>Testes Unitários</li><li>Fundamentos de QA</li>
-              <li>Swagger / OpenAPI</li><li>Postman</li>
-            </ul>
-          </div>
-          <div class="skills-group">
-            <h3 class="skills-group__label">Em Aprendizado</h3>
-            <ul class="skills-group__list learning">
-              <li>AWS</li><li>React</li><li>JavaScript</li><li>HTML / CSS</li>
-            </ul>
-          </div>
-        </section>
-
-        <section class="block reveal-left">
-          <h2 class="block__title">Soft Skills</h2>
-          <ul class="soft-skills">
-            <li>Trabalho em equipe</li>
-            <li>Proatividade</li>
-            <li>Aprendizagem contínua</li>
-            <li>Resolução de problemas sob pressão</li>
-            <li>Adaptabilidade</li>
-            <li>Organização</li>
-            <li>Comunicação técnica</li>
-          </ul>
-        </section>
-
-        <section class="block reveal-left">
-          <h2 class="block__title">Idiomas</h2>
-          <div class="lang">
-            <span class="lang__name">Inglês</span>
-            <span class="lang__level">Avançado</span>
-          </div>
-          <p class="lang__note">Kumon — leitura técnica, escrita e compreensão auditiva</p>
-          <div class="lang" style="margin-top:.75rem">
-            <span class="lang__name">Espanhol</span>
-            <span class="lang__level">Básico</span>
-          </div>
-        </section>
-
-      </aside>
-
-      <!-- MAIN COLUMN -->
-      <div class="main-col">
-
-        <section class="block">
-          <h2 class="block__title">Projetos de Destaque</h2>
-
-          <div class="project reveal">
-            <div class="project__header">
-              <div>
-                <h3 class="project__name">Portal de Onboarding Corporativo</h3>
-                <span class="project__sub">GameOnTech · Hackathon Startline (Mileto) · 2026</span>
-              </div>
-              <span class="project__badge">🏆 1º Lugar</span>
-            </div>
-            <p class="project__link">
-              <i class="bi bi-link-45deg"></i>
-              <a href="https://github.com/bessa2121/GameOnTech" target="_blank">github.com/bessa2121/GameOnTech</a>
-            </p>
-            <ul class="project__stack">
-              <li>Java</li><li>Spring Boot</li><li>IA</li>
-            </ul>
-            <ul class="project__bullets">
-              <li><strong>Problema:</strong> onboardings sem estrutura gerando baixa produtividade e frustração em novos colaboradores.</li>
-              <li><strong>Solução:</strong> portal com cronograma de eventos, tarefas, logs de progresso, políticas e feedback estruturado de desempenho.</li>
-              <li>Progresso calculado automaticamente por colaborador; entregue sob alta pressão entre dezenas de equipes.</li>
-            </ul>
-          </div>
-
-          <div class="project reveal">
-            <div class="project__header">
-              <div>
-                <h3 class="project__name">Arquitetura de Microsserviços</h3>
-                <span class="project__sub">Warehouse & Storefront · Projeto Pessoal · 2025</span>
-              </div>
-            </div>
-            <p class="project__link">
-              <i class="bi bi-link-45deg"></i>
-              <a href="https://github.com/bessa2121/Microservi-os_DIO" target="_blank">github.com/bessa2121/Microservi-os_DIO</a>
-            </p>
-            <ul class="project__stack">
-              <li>Java 17</li><li>Spring Boot</li><li>RabbitMQ</li><li>Docker</li><li>PostgreSQL</li>
-            </ul>
-            <ul class="project__bullets">
-              <li><strong>Problema:</strong> sistemas monolíticos com alto acoplamento dificultam escalabilidade e manutenção.</li>
-              <li><strong>Solução:</strong> dois microsserviços com comunicação síncrona (REST) e assíncrona (RabbitMQ), containerizados com Docker Compose.</li>
-              <li>API documentada via Swagger/OpenAPI; persistência com Spring Data JPA e PostgreSQL.</li>
-            </ul>
-          </div>
-        </section>
-
-        <section class="block reveal">
-          <h2 class="block__title">Formação Acadêmica</h2>
-          <div class="edu">
-            <div class="edu__dot"></div>
-            <div class="edu__content">
-              <h3 class="edu__course">Técnico em Desenvolvimento de Sistemas</h3>
-              <span class="edu__institution">ETEC Prof. Camargo Aranha · São Paulo</span>
-              <span class="edu__period">2024 – 2026 (previsão)</span>
-            </div>
-          </div>
-        </section>
-
-        <section class="block reveal">
-          <h2 class="block__title">Bootcamps</h2>
-          <div class="timeline">
-            <div class="timeline__item reveal-right">
-              <div class="timeline__dot"></div>
-              <div class="timeline__body">
-                <h3 class="timeline__title">Backend com Java & AWS</h3>
-                <span class="timeline__meta">CI&T + DIO · 2026</span>
-                <p>Microsserviços, APIs REST, cloud AWS e boas práticas de desenvolvimento Java.</p>
-              </div>
-            </div>
-            <div class="timeline__item reveal-right">
-              <div class="timeline__dot"></div>
-              <div class="timeline__body">
-                <h3 class="timeline__title">Back-End com Java & QA</h3>
-                <span class="timeline__meta">Almaviva + DIO · 2026</span>
-                <p>Desenvolvimento back-end, qualidade de software e testes automatizados com JUnit.</p>
-              </div>
-            </div>
-            <div class="timeline__item reveal-right">
-              <div class="timeline__dot"></div>
-              <div class="timeline__body">
-                <h3 class="timeline__title">Primeiros Passos com Java</h3>
-                <span class="timeline__meta">Riachuelo + DIO · 2025</span>
-                <p>POO, APIs REST, integração com banco de dados, testes e versionamento com Git/GitHub.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="block reveal-up">
-          <h2 class="block__title">Certificações AWS</h2>
-          <ul class="certs">
-            <li><i class="bi bi-check2"></i>Introdução ao Conceito de Cloud</li>
-            <li><i class="bi bi-check2"></i>Entendendo a Infraestrutura AWS</li>
-            <li><i class="bi bi-check2"></i>Computação em AWS</li>
-            <li><i class="bi bi-check2"></i>Redes em AWS</li>
-            <li><i class="bi bi-check2"></i>Armazenamento e Banco de Dados AWS</li>
-            <li><i class="bi bi-check2"></i>Segurança na Nuvem com AWS</li>
-            <li><i class="bi bi-check2"></i>Monitoramento e Análise na AWS</li>
-          </ul>
-        </section>
-
-        <section class="block reveal">
-          <h2 class="block__title">Eventos & Competições</h2>
-          <ul class="events">
-            <li>
-              <span class="events__year">2026</span>
-              <span><strong>Hackathon Startline (Mileto)</strong> — 1º lugar com GameOnTech</span>
-            </li>
-            <li>
-              <span class="events__year">2025</span>
-              <span><strong>COMPETEC – USP Leste</strong> — Competição universitária de programação Java</span>
-            </li>
-            <li>
-              <span class="events__year">2025</span>
-              <span><strong>PET-SI / USP Leste</strong> — Extensão universitária em Java</span>
-            </li>
-            <li>
-              <span class="events__year">2024</span>
-              <span><strong>Hackathon U-Shar</strong> — Solução Java/POO em ambiente competitivo</span>
-            </li>
-          </ul>
-        </section>
-
+    <!-- ── CV HEADER ── -->
+    <div class="cv-header">
+      <img class="cv-photo"
+           src="assets/images/perfil_photo.jpg"
+           alt="Davi Tavares"
+           onerror="this.style.display='none'">
+      <div class="cv-header-info">
+        <h1 class="cv-name">Davi Tavares</h1>
+        <p class="cv-role">Backend Developer · Java · Spring Boot · React · MySQL</p>
+        <div class="cv-contact-row">
+          <a href="mailto:dxrktavares3@gmail.com" class="cv-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            dxrktavares3@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/davi-tavares-038b472a5/" class="cv-contact-item" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            linkedin.com/in/davi-tavares
+          </a>
+          <a href="https://github.com/bessa2121" class="cv-contact-item" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            github.com/bessa2121
+          </a>
+          <span class="cv-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            São Paulo, SP — Brasil
+          </span>
+        </div>
       </div>
     </div>
-  </main>
 
-  <footer class="resume-footer">
-    <p>© 2026 · Davi Tavares · <a href="index.html">Voltar ao portfólio</a></p>
-  </footer>
-  <script src="assets/js/curriculo.js"></script>
+    <!-- ── CV BODY ── -->
+    <div class="cv-body">
+
+      <!-- Objetivo / Sobre -->
+      <div class="cv-section reveal">
+        <p class="cv-section-title">Objetivo</p>
+        <p class="cv-about">
+          Desenvolvedor Back-end com foco em <strong>Java e Spring Boot</strong>, buscando uma oportunidade para aplicar e expandir meus conhecimentos em desenvolvimento de sistemas escaláveis, APIs REST e arquitetura de microsserviços. Apaixonado por tecnologia, com <strong>Inglês Avançado</strong> e capacidade de aprendizado rápido em ambientes corporativos.
+        </p>
+      </div>
+
+      <!-- Habilidades Técnicas -->
+      <div class="cv-section reveal">
+        <p class="cv-section-title">Habilidades Técnicas</p>
+        <div class="cv-skills-grid">
+          <span class="cv-skill"><span class="cv-skill-dot dot-java"></span>Java</span>
+          <span class="cv-skill"><span class="cv-skill-dot dot-spring"></span>Spring Boot</span>
+          <span class="cv-skill"><span class="cv-skill-dot dot-spring"></span>Spring Security</span>
+          <span class="cv-skill"><span class="cv-skill-dot dot-spring"></span>Spring Data JPA</span>
+          <span class="cv-skill"><span class="cv-skill-dot dot-react"></span>React</span>
+          <span class="cv-skill"><span class="cv-skill-dot dot-react"></span>TypeScript</span>
+          <span class="cv-skill"><span class="cv-skill-dot dot-mysql"></span>MySQL</span>
+          <span class="cv-skill"><span class="cv-skill-dot dot-mysql"></span>SQL / Migrations</span>
+          <span class="cv-skill"><span class="cv-skill-dot dot-blue"></span>REST API</span>
+          <span class="cv-skill"><span class="cv-skill-dot dot-blue"></span>Microsserviços</span>
+          <span class="cv-skill"><span class="cv-skill-dot dot-blue"></span>Docker</span>
+          <span class="cv-skill"><span class="cv-skill-dot dot-blue"></span>AWS (Cloud)</span>
+          <span class="cv-skill"><span class="cv-skill-dot dot-purple"></span>JUnit / Testes</span>
+          <span class="cv-skill"><span class="cv-skill-dot dot-purple"></span>Git / GitHub</span>
+          <span class="cv-skill"><span class="cv-skill-dot dot-gray"></span>HTML / CSS</span>
+          <span class="cv-skill"><span class="cv-skill-dot dot-gray"></span>JavaScript</span>
+          <span class="cv-skill"><span class="cv-skill-dot dot-gray"></span>Python</span>
+          <span class="cv-skill"><span class="cv-skill-dot dot-gray"></span>PHP</span>
+        </div>
+      </div>
+
+      <!-- Projetos em Destaque -->
+      <div class="cv-section reveal">
+        <p class="cv-section-title">Projetos em Destaque</p>
+
+        <div class="cv-item">
+          <div class="cv-item-period">
+            2026
+            <span class="cv-badge">Java · Spring</span>
+          </div>
+          <div>
+            <p class="cv-item-title">Warehouse &amp; Storefront — Microsserviços</p>
+            <p class="cv-item-company">github.com/bessa2121/Microservi-os_DIO</p>
+            <p class="cv-item-desc">
+              Arquitetura de microsserviços com Spring Boot, mensageria assíncrona de estoque e Docker Compose. APIs REST independentes com banco MySQL por serviço, aplicando princípios SOLID e Clean Architecture.
+            </p>
+            <div class="cv-item-tags">
+              <span class="project-tag tag-java">Java</span>
+              <span class="project-tag tag-spring">Spring Boot</span>
+              <span class="project-tag tag-mysql">MySQL</span>
+              <span class="project-tag tag-docker">Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-period">
+            2026
+            <span class="cv-badge">Hackathon</span>
+          </div>
+          <div>
+            <p class="cv-item-title">GameOnTech — Portal de Onboarding com IA 🏆</p>
+            <p class="cv-item-company">Hackathon Game On de Tecnologia · 1º lugar entre 25 participantes</p>
+            <p class="cv-item-desc">
+              Portal de onboarding corporativo com IA generativa desenvolvido em 7 dias (30h). Aplicação de uso intencional de Inteligência Artificial baseada em case real de primeiro emprego.
+            </p>
+            <div class="cv-item-tags">
+              <span class="project-tag tag-java">Java</span>
+              <span class="project-tag tag-spring">Spring Boot</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-period">2025</div>
+          <div>
+            <p class="cv-item-title">ECOAI — IA de Coleta de Lixo</p>
+            <p class="cv-item-company">github.com/bessa2121/eco-ia-projeto</p>
+            <p class="cv-item-desc">
+              Sistema de reconhecimento de resíduos por IA com geolocalização em tempo real via Google Maps API, histórico de descartes e containerização com Docker.
+            </p>
+            <div class="cv-item-tags">
+              <span class="project-tag tag-python">Python</span>
+              <span class="project-tag tag-docker">Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-period">2025</div>
+          <div>
+            <p class="cv-item-title">ExpoCuca — Sistema de Pontuação Pac-Man</p>
+            <p class="cv-item-company">github.com/bessa2121/PACMAN</p>
+            <p class="cv-item-desc">
+              Escape Run temático com sistema de pontuação em tempo real, tabela de ranking dinâmica e painel de administração protegido com autenticação.
+            </p>
+            <div class="cv-item-tags">
+              <span class="project-tag tag-php">PHP</span>
+              <span class="project-tag tag-js">JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formação -->
+      <div class="cv-section reveal">
+        <p class="cv-section-title">Formação Acadêmica</p>
+        <div class="cv-item">
+          <div class="cv-item-period">
+            2024 — Atual
+            <span class="cv-badge">Cursando</span>
+          </div>
+          <div>
+            <p class="cv-item-title">Desenvolvimento de Sistemas</p>
+            <p class="cv-item-company">ETEC Prof. Camargo Aranha · São Paulo, SP</p>
+            <p class="cv-item-desc">Técnico em Desenvolvimento de Sistemas com foco em programação orientada a objetos, banco de dados e desenvolvimento web.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cursos e Certificações -->
+      <div class="cv-section reveal">
+        <p class="cv-section-title">Cursos &amp; Certificações</p>
+
+        <div class="cv-item trophy">
+          <div class="cv-item-period">
+            2026
+            <span class="cv-badge" style="background:rgba(163,113,247,0.12);color:var(--purple);border-color:rgba(163,113,247,0.25);">1º Lugar</span>
+          </div>
+          <div>
+            <p class="cv-item-title">Hackathon Game On de Tecnologia</p>
+            <p class="cv-item-company">Se Liga By Mileto · 7 dias · 30h</p>
+            <p class="cv-item-desc">Competição em estilo hackathon com temática de primeiro emprego. Classificação: Top 1 entre 25 participantes.</p>
+            <div class="cv-item-tags">
+              <span class="project-tag tag-java">Java</span>
+              <span class="project-tag tag-spring">Spring Boot</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-period">2026</div>
+          <div>
+            <p class="cv-item-title">Bootcamp Backend com Java &amp; AWS</p>
+            <p class="cv-item-company">CI&amp;T + Digital Innovation One</p>
+            <p class="cv-item-desc">Microsserviços, APIs REST, cloud AWS e boas práticas de desenvolvimento Java em ambiente corporativo.</p>
+            <div class="cv-item-tags">
+              <span class="project-tag tag-java">Java</span>
+              <span class="project-tag tag-spring">Spring Boot</span>
+              <span class="project-tag tag-aws">AWS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-period">2026</div>
+          <div>
+            <p class="cv-item-title">Bootcamp Back-End com Java &amp; QA</p>
+            <p class="cv-item-company">Almaviva + Digital Innovation One</p>
+            <p class="cv-item-desc">Desenvolvimento back-end, qualidade de software e testes automatizados com JUnit em projetos reais.</p>
+            <div class="cv-item-tags">
+              <span class="project-tag tag-java">Java</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-period">2025</div>
+          <div>
+            <p class="cv-item-title">Bootcamp Primeiros Passos com Java</p>
+            <p class="cv-item-company">Riachuelo + Digital Innovation One</p>
+            <p class="cv-item-desc">POO, APIs REST, integração com banco de dados, testes unitários e versionamento com Git/GitHub.</p>
+            <div class="cv-item-tags">
+              <span class="project-tag tag-java">Java</span>
+              <span class="project-tag tag-mysql">MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-period">2026</div>
+          <div>
+            <p class="cv-item-title">Certificações AWS Cloud (7 módulos)</p>
+            <p class="cv-item-company">Digital Innovation One</p>
+            <p class="cv-item-desc">
+              Cloud, Infraestrutura AWS, Computação, Redes, Armazenamento e Banco de Dados, Segurança na Nuvem, Monitoramento e Análise.
+            </p>
+            <div class="cv-item-tags">
+              <span class="project-tag tag-aws">AWS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-period">Fev 2023</div>
+          <div>
+            <p class="cv-item-title">Versionamento com Git e GitHub</p>
+            <p class="cv-item-company">Digital Innovation One · 2h</p>
+            <p class="cv-item-desc">Versionamento, instalação, autenticação, repositórios, branches, desfazer e sincronizar alterações.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Idiomas -->
+      <div class="cv-section reveal">
+        <p class="cv-section-title">Idiomas</p>
+        <div class="cv-item">
+          <div class="cv-item-period">Fluente</div>
+          <div>
+            <p class="cv-item-title">Inglês</p>
+            <p class="cv-item-desc" style="margin:0">Avançado — leitura, escrita e conversação em contexto técnico e profissional.</p>
+          </div>
+        </div>
+        <div class="cv-item">
+          <div class="cv-item-period">Básico</div>
+          <div>
+            <p class="cv-item-title">Espanhol</p>
+            <p class="cv-item-desc" style="margin:0">Nível básico de leitura e comunicação.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /cv-body -->
+  </div><!-- /cv-card -->
+</div><!-- /cv-page -->
+
+<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <a href="index.html" class="logo">
+    <span class="logo-icon">DT</span>
+    Davi Tavares
+  </a>
+  <p class="footer-copy">
+    © 2026 · Desenvolvido por
+    <a href="https://github.com/bessa2121" target="_blank" rel="noopener">Davi Tavares</a>
+  </p>
+</footer>
+
+<!-- ── SCRIPTS ────────────────────────────────────────────── -->
+<script src="assets/js/scripts.js"></script>
+<script src="assets/js/curriculo.js"></script>
+
 </body>
 </html>

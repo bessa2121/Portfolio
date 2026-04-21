@@ -1,102 +1,70 @@
-# 👨‍💻 Portfólio — Davi Tavares Nascimento Bessa
+# Portfólio — Davi Tavares
 
-Portfólio profissional desenvolvido para apresentar meus projetos, habilidades técnicas e trajetória como **Desenvolvedor Back-End Java**.
+Portfólio pessoal refatorado com design premium focado na stack principal:
+**Java · Spring Boot · React · MySQL**
 
-Este site funciona como minha vitrine técnica, reunindo:
+## Estrutura do projeto
 
-- Projetos reais com foco em arquitetura e APIs REST
-- Experiência com microsserviços, mensageria e Docker
-- Currículo interativo e exportável em PDF
-- Organização visual pensada para recrutadores e desenvolvedores
+```
+portfolio/
+├── index.html          # Página principal (Home, Stack, Projetos, Sobre, Contato)
+├── curriculo.html      # Currículo completo (imprimível / PDF)
+├── obrigado.html       # Página de confirmação do formulário
+├── favicon.ico
+│
+├── assets/
+│   ├── css/
+│   │   ├── styles.css       # Estilos principais (toda a paleta e componentes)
+│   │   └── curriculo.css    # Estilos exclusivos da página de currículo
+│   │
+│   ├── js/
+│   │   ├── scripts.js       # Scripts principais (canvas, cursor, accordion, reveal)
+│   │   └── curriculo.js     # Scripts da página de currículo (print, reveal)
+│   │
+│   └── images/
+│       ├── perfil_photo.jpg
+│       ├── logo.png
+│       ├── projects/        # Screenshots dos projetos
+│       └── technologies/    # SVGs das tecnologias
+```
 
-🔗 **Acesse:** https://portfolio-flax-five-31.vercel.app/
+## Paleta de cores
 
----
+| Variável   | Cor                      | Uso                    |
+|------------|--------------------------|------------------------|
+| `--blue`   | `#58A6FF` — Azul Dev     | Cor principal / accent |
+| `--purple` | `#A371F7` — Roxo Tech    | Cor secundária         |
+| `--java`   | `#F89820`                | Tag / card Java        |
+| `--spring` | `#6DB33F`                | Tag / card Spring Boot |
+| `--react`  | `#61DAFB`                | Tag / card React       |
+| `--mysql`  | `#00A1C9`                | Tag / card MySQL       |
 
-## 🎯 Objetivo do Projeto
+## Tecnologias utilizadas
 
-Criar um portfólio que não fosse apenas visual, mas que **comprovasse na prática**:
+- **HTML5** semântico
+- **CSS3** puro com Custom Properties (sem frameworks)
+- **JavaScript** vanilla (sem dependências externas)
+- Google Fonts: Outfit + JetBrains Mono
 
-- Organização de código
-- Clareza de arquitetura
-- Domínio de tecnologias do ecossistema Java
-- Capacidade de estruturar projetos do início ao deploy
+## Como usar
 
----
+1. Extraia o `.zip`
+2. Abra `index.html` em qualquer browser
+3. Para deploy: basta hospedar os arquivos em qualquer servidor estático (Vercel, Netlify, GitHub Pages)
 
-## 🧩 Seções do Portfólio
+## Funcionalidades
 
-- **Home** — Apresentação direta e foco em projetos
-- **Projetos** — Cards detalhando problema, solução e tecnologias
-- **Sobre mim** — Formação, idiomas e trajetória
-- **Currículo** — Página dedicada, estilizada e exportável em PDF
-- **Contato** — Acesso rápido às redes e e-mail
-
----
-
-## 🚀 Tecnologias Utilizadas no Site
-
-- HTML5
-- CSS3
-- JavaScript
-
----
-
-## 💼 Projetos em Destaque no Portfólio
-
-### 🏆 GameOnTech — 1º Lugar Hackathon Startline (Mileto)
-
-Portal de onboarding corporativo desenvolvido sob alta pressão competitiva.
-
-**Stack:** Java · Spring Boot · IA
-
----
-
-### 🧱 Arquitetura de Microsserviços — Warehouse & Storefront
-
-Dois microsserviços se comunicando via REST e RabbitMQ, containerizados com Docker Compose.
-
-**Stack:** Java 17 · Spring Boot · RabbitMQ · Docker · PostgreSQL
-
----
-
-### ♻️ ECOAI — Reconhecimento de Lixo com IA
-
-Sistema com reconhecimento de imagem, geolocalização e registro de descartes.
-
-**Stack:** Python · JS · HTML · CSS · Docker
-
----
-
-## 🧠 O que este portfólio demonstra
-
-Este projeto mostra mais do que layout. Ele evidencia:
-
-- Capacidade de estruturar apresentação técnica
-- Clareza na comunicação de projetos
-- Organização visual orientada a recrutadores
-- Integração entre portfólio e currículo
-- Maturidade na exposição de habilidades
+- ✅ Fundo animado com partículas e conexões (canvas)
+- ✅ Cursor glow suave
+- ✅ Animações de reveal no scroll (IntersectionObserver)
+- ✅ Hero com texto digitando (typewriter effect)
+- ✅ Cards de stack com hover glow por tecnologia
+- ✅ Acordeão de certificações animado
+- ✅ Formulário funcional via FormSubmit
+- ✅ Responsivo (mobile-first com nav bottom)
+- ✅ Currículo completo imprimível (Ctrl+P ou botão)
+- ✅ Página de obrigado após envio
 
 ---
 
-## 📄 Currículo Integrado
-
-O portfólio possui uma página exclusiva de currículo, com:
-
-- Hard Skills organizadas por área
-- Projetos descritos por problema e solução
-- Formação, bootcamps, certificações e eventos
-- Exportação direta para PDF
-
----
-
-## 📫 Contato
-
-- GitHub: https://github.com/bessa2121
-- LinkedIn: https://linkedin.com/in/davi-tavares-038b472a5
-- Email: dxrktavares3@gmail.com
-
----
-
-> “Código bom não é o que funciona. É o que continua funcionando quando o projeto cresce.”
+Desenvolvido por **Davi Tavares** · São Paulo, SP · 2026
