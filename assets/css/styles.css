@@ -666,6 +666,8 @@ section, main { position: relative; z-index: 1; }
 .tag-php    { background: rgba(119,123,180,0.07); color: #777BB4; border-color: rgba(119,123,180,0.18);}
 .tag-js     { background: rgba(247,223,30,0.07);  color: #c9b600; border-color: rgba(247,223,30,0.18); }
 .tag-aws    { background: rgba(255,153,0,0.07);   color: #FF9900; border-color: rgba(255,153,0,0.18); }
+.tag-css   { background: rgba(86,61,124,0.07);  color: #8556cc; border-color: rgba(111, 75, 165, 0.486); }
+.tag-html  { background: rgba(227,76,38,0.07);  color: #E34C26; border-color: rgba(227,76,38,0.18); }
 
 .pj-link {
   display: inline-flex;
@@ -891,8 +893,7 @@ section, main { position: relative; z-index: 1; }
   transition: transform 0.3s var(--ease);
 }
 .accordion-item.open .accordion-chevron { transform: rotate(180deg); }
-.accordion-body { display: none; padding: 0 1.25rem 1.25rem; }
-.accordion-item.open .accordion-body { display: block; }
+.accordion-body { padding: 0 1.25rem 1.25rem; }
 .accordion-body p {
   font-size: 0.82rem;
   color: var(--fg2);
@@ -1061,4 +1062,21 @@ footer {
   .project-card.side .project-img-wrap { width: 100%; height: 160px; }
   .about-photo-badge { right: 0; }
   .scroll-hint { left: 1.5rem; }
+}
+
+/* ── Accordion Animation ───────────────────────── */
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    max-height 0.5s ease,
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.accordion-item.open .accordion-body {
+  opacity: 1;
+  transform: translateY(0);
 }
