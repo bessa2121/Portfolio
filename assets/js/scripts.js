@@ -137,16 +137,6 @@
   sections.forEach(s => observer.observe(s));
 })();
 
-/* ── Accordion ────────────────────────────────────────────── */
-function toggleAccordion(btn) {
-  const item   = btn.closest('.accordion-item');
-  const isOpen = item.classList.contains('open');
-  // Close all
-  document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
-  // Open clicked (unless it was already open)
-  if (!isOpen) item.classList.add('open');
-}
-
 /* ── Typed text effect (hero subtitle) ─────────────────────── */
 (function initTyped() {
   const el = document.getElementById('hero-typed');
@@ -180,3 +170,47 @@ function toggleAccordion(btn) {
   }
   tick();
 })();
+
+function toggleAccordion(btn) {
+  const item = btn.closest('.accordion-item');
+  const body = item.querySelector('.accordion-body');
+  const isOpen = item.classList.contains('open');
+
+  // fecha todos
+  document.querySelectorAll('.accordion-item').forEach(i => {
+    i.classList.remove('open');
+    const b = i.querySelector('.accordion-body');
+    if (b) {
+      b.style.maxHeight = '0px';
+    }
+  });
+
+  // abre o clicado
+  if (!isOpen) {
+    item.classList.add('open');
+
+    // força reflow pra garantir animação suave
+    body.offsetHeight;
+
+    body.style.maxHeight = body.scrollHeight + "px";
+  }
+}
+
+/* ── Inicialização segura ───────────────────────── */
+function initAccordion() {
+  document.querySelectorAll('.accordion-item.open .accordion-body')
+    .forEach(body => {
+      body.style.maxHeight = body.scrollHeight + "px";
+    });
+}
+
+/* ── Quando a página carrega ───────────────────── */
+window.addEventListener('load', initAccordion);
+
+/* ── Corrige bugs ao redimensionar (muito importante) ───── */
+window.addEventListener('resize', () => {
+  document.querySelectorAll('.accordion-item.open .accordion-body')
+    .forEach(body => {
+      body.style.maxHeight = body.scrollHeight + "px";
+    });
+});
